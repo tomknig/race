@@ -12,20 +12,10 @@ First, clone the repo into a new folder (if you haven't yet):
 git clone https://github.com/hyper-scale/race.git .
 ```
 
-Next, install the packages:
+Next start dev enviroment:
 
 ```sh
-npm i
-# or
-yarn
-```
-
-Then, run the local development server:
-
-```sh
-npm run dev
-# or
-yarn dev
+docker-compose up -d
 ```
 
 You can now open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
@@ -41,9 +31,7 @@ You can now open [http://localhost:3000](http://localhost:3000) in your browser 
 Don't forget to lint the code!
 
 ```sh
-npm run lint
-# or
-yarn lint
+docker-compose exec web yarn lint
 ```
 
 ## Contributing
