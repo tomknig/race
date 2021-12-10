@@ -18,6 +18,14 @@ Next start dev enviroment:
 docker-compose up -d
 ```
 
+If you prefer to develop without the docker you can start mongodb only with:
+
+```
+docker-compose up -d mongo
+```
+
+MongoDB is pre-populated with test data.
+
 You can now open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
 - You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
@@ -26,11 +34,11 @@ You can now open [http://localhost:3000](http://localhost:3000) in your browser 
 
 - The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Seed DB
+## Seed DB manually
 
 ```shell
-mongoimport --host localhost --port 27017 --db race --collection authors --mode upsert --type json --file seed/airtableAuthors.json --jsonArray
-mongoimport --host localhost --port 27017 --db race --collection applications --mode upsert --type json --file seed/airtableApplications.json --jsonArray
+mongoimport --host mongodb --port 27017 --db race --collection authors --mode upsert --type json --file seed/airtableAuthors.json --jsonArray
+mongoimport --host mongodb --port 27017 --db race --collection applications --mode upsert --type json --file seed/airtableApplications.json --jsonArray
 ```
 
 ## Linting
@@ -39,6 +47,10 @@ Don't forget to lint the code!
 
 ```sh
 docker-compose exec web yarn lint
+```
+or for dev without docker:
+```
+yarn lint
 ```
 
 ## Contributing
