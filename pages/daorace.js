@@ -4,11 +4,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import styles from '../styles/Home.module.css';
+
 
 
 // components
-import Explanation from '../components/Explanation/Explanation';
+import Leaderboard from '../components/Leaderboard/Leaderboard';
 
 const connectWallet = () => alert(`Coming soon!`);
 
@@ -18,7 +18,7 @@ export default function Home() {
       <Head>
         <title>Hyperscale - DAO Race</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        
+      
       </Head>
 
       <div className="flex justify-center">
@@ -86,9 +86,8 @@ export default function Home() {
             </Popover>
           </nav>
 
-          <Explanation />
-
-          <div className="pointer-events-none">
+          <Leaderboard />
+          {/* <div className="pointer-events-none">
             <div
               className="absolute top-[-667px] left-[626px] w-[1185px] h-[1186px] opacity-20"
               style={{
@@ -110,7 +109,8 @@ export default function Home() {
                 "radial-gradient(50% 50% at 50% 50%, #5D5FEF 0%, rgba(93, 95, 239, 0) 100%)",
               }}
             />
-          </div>
+          </div> */}
+         
         </div>
       </div>
     </>
