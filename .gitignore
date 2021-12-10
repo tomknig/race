@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# mongodb
+data/
+
 # lockfiles
 package-lock.json
 yarn.lock
@@ -36,3 +39,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# VS Code files
+.vscode

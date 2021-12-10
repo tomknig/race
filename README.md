@@ -12,21 +12,19 @@ First, clone the repo into a new folder (if you haven't yet):
 git clone https://github.com/hyper-scale/race.git .
 ```
 
-Next, install the packages:
+Next start dev enviroment:
 
 ```sh
-npm i
-# or
-yarn
+docker-compose up -d
 ```
 
-Then, run the local development server:
+If you prefer to develop without the docker you can start mongodb only with:
 
-```sh
-npm run dev
-# or
-yarn dev
 ```
+docker-compose up -d mongo
+```
+
+MongoDB is pre-populated with test data.
 
 You can now open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
@@ -36,13 +34,24 @@ You can now open [http://localhost:3000](http://localhost:3000) in your browser 
 
 - The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## Seed DB
+
+If you are using MongoDB with docker-compose the test data is already there. Otherwise you can import test data manually:
+
+```shell
+mongoimport --host mongodb --port 27017 --db race --collection authors --mode upsert --type json --file seed/airtableAuthors.json --jsonArray
+mongoimport --host mongodb --port 27017 --db race --collection applications --mode upsert --type json --file seed/airtableApplications.json --jsonArray
+```
+
 ## Linting
 
 Don't forget to lint the code!
 
 ```sh
-npm run lint
-# or
+docker-compose exec web yarn lint
+```
+or for dev without docker:
+```
 yarn lint
 ```
 
