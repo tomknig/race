@@ -4,45 +4,21 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import styles from '../styles/Home.module.css';
+
 
 
 // components
-import Explanation from '../components/Explanation/Explanation';
-import { useWeb3React } from '@web3-react/core';
-import { injected } from '../components/wallet/connectors';
+import Leaderboard from '../components/Leaderboard/Leaderboard';
+
+const connectWallet = () => alert(`Coming soon!`);
 
 export default function Home() {
-
-  const { active, account, library, connector, activate, deactivate } = useWeb3React();
-
-  async function connectWallet() {
-
-    try {
-
-      await activate(injected);
-
-    } catch (ex) {
-      console.log(ex);
-    }
-  }
-
-  // Use this to disconnect
-  async function disconnectWallet() {
-
-    try {
-      await deactivate();
-    }  catch (ex) {
-      console.log(ex);
-    }
-  }
-
   return (
     <>
       <Head>
         <title>Hyperscale - DAO Race</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        
+      
       </Head>
 
       <div className="flex justify-center">
@@ -51,8 +27,8 @@ export default function Home() {
             <Popover className="flex items-center justify-between">
               <Link href="/">
                 <a className="flex items-center gap-x-4">
-                  <Image src="/logo.svg" width="60" height="60" alt="" />
-                  <Image src="/hyperscale.svg" width="150" height="80" alt="" />
+                    <Image src="/logo.svg" width="60" height="60" alt="" />
+                    <Image src="/hyperscale.svg" width="150" height="80" alt="" />
                 </a>
               </Link>
               {/* Desktop Navigation */}
@@ -68,7 +44,6 @@ export default function Home() {
                 <button className="inline-flex items-center px-4 py-2 border border-transparent font-medium rounded shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={connectWallet}>
                 Connect Discord
                 </button>
-
               </div>
               {/* Mobile Navigation */}
               <div className="-mr-2 flex items-center md:hidden">
@@ -101,47 +76,45 @@ export default function Home() {
                         <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</a>
                       </Link>
                       <Link href="/daorace">
-                      <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">DAO Race</a>
+                      <a  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">DAO Race</a>
                       </Link>
                       <a href="https://twitter.com/HyperscaleFund" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" rel="external noreferrer" target="_blank">Twitter</a>
                       <a href="https://discord.com/invite/pVSbzYny2c" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" rel="external noreferrer" target="_blank">Discord</a>
                     </div>
-
                     <button className="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={connectWallet}>
                       Connect Discord
                     </button>
-
                   </div>
                 </Popover.Panel>
               </Transition>
             </Popover>
           </nav>
 
-          <Explanation />
-
-          <div className="pointer-events-none">
+          <Leaderboard />
+          {/* <div className="pointer-events-none">
             <div
               className="absolute top-[-667px] left-[626px] w-[1185px] h-[1186px] opacity-20"
               style={{
                 background:
-                  "radial-gradient(50% 50% at 50% 50%, #4FFEFE 0%, rgba(93, 186, 239, 0) 100%)",
+                "radial-gradient(50% 50% at 50% 50%, #4FFEFE 0%, rgba(93, 186, 239, 0) 100%)",
               }}
             />
             <div
               className="absolute top-[-463px] left-[-682px] w-[931px] h-[931px] opacity-20"
               style={{
                 background:
-                  "radial-gradient(50% 50% at 50% 50%, #ED008E 0%, rgba(239, 93, 146, 0) 100%)",
+                "radial-gradient(50% 50% at 50% 50%, #ED008E 0%, rgba(239, 93, 146, 0) 100%)",
               }}
             />
             <div
               className="absolute top-[-779px] left-[-82px] w-[1287px] h-[1287px] opacity-30"
               style={{
                 background:
-                  "radial-gradient(50% 50% at 50% 50%, #5D5FEF 0%, rgba(93, 95, 239, 0) 100%)",
+                "radial-gradient(50% 50% at 50% 50%, #5D5FEF 0%, rgba(93, 95, 239, 0) 100%)",
               }}
             />
-          </div>
+          </div> */}
+         
         </div>
       </div>
     </>
