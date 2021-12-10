@@ -34,7 +34,9 @@ You can now open [http://localhost:3000](http://localhost:3000) in your browser 
 
 - The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Seed DB manually
+## Seed DB
+
+If you are using MongoDB with docker-compose the test data is already there. Otherwise you can import test data manually:
 
 ```shell
 mongoimport --host mongodb --port 27017 --db race --collection authors --mode upsert --type json --file seed/airtableAuthors.json --jsonArray
