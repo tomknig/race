@@ -14,8 +14,8 @@ export default function Home() {
       </Head>
 
       <div className="w-screen flex items-center px-10">
-        <Image src="/../public/logo.svg" width="60" height="60" alt="" />
-        <Image src="/../public/hyperscale.svg" width="150" height="80" alt="" />
+        <Image src="/logo.svg" width="60" height="60" alt="" />
+        <Image src="/hyperscale.svg" width="150" height="80" alt="" />
         <div className="flex space-x-10">
           <div>DAO Race</div>
           <div>Discord</div>
