@@ -36,7 +36,9 @@ export default function Home() {
                 <Link href="/">
                   <a className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-opacity-30">Home</a>
                 </Link>
-                <a href="/daorace" className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-opacity-30">DAO Race</a>
+                <Link href="/daorace">
+                <a  className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-opacity-30">DAO Race</a>
+                </Link>
                 <a href="https://twitter.com/HyperscaleFund" className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-opacity-30" rel="external noreferrer" target="_blank">Twitter</a>
                 <a href="https://discord.com/invite/pVSbzYny2c" className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-opacity-30" rel="external noreferrer" target="_blank">Discord</a>
                 <button className="inline-flex items-center px-4 py-2 border border-transparent font-medium rounded shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={connectWallet}>
@@ -73,7 +75,9 @@ export default function Home() {
                       <Link href="/">
                         <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</a>
                       </Link>
-                      <a href="/daorace" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">DAO Race</a>
+                      <Link href="/daorace">
+                      <a  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">DAO Race</a>
+                      </Link>
                       <a href="https://twitter.com/HyperscaleFund" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" rel="external noreferrer" target="_blank">Twitter</a>
                       <a href="https://discord.com/invite/pVSbzYny2c" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" rel="external noreferrer" target="_blank">Discord</a>
                     </div>

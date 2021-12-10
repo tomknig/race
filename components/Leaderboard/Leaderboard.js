@@ -3,18 +3,18 @@ import daorace_styles from '../../styles/Leaderboard.module.css';
 // A super simple expandable component.{JSON.stringify(data, null, 2)}
 const ExpandedComponent = ({ data }) => 
 
-    <div class="p-6 top-border row-child">
+    <div className="p-6 top-border row-child">
     
            
             <div>
-            <lable class="font-bold"><b>Submitted by</b></lable>  <a class="float-right" href='#'>Website.com</a>
-            <p class="pb-4">@{data.submittedBy}</p>
-            <lable class="font-bold"><b>Project name</b></lable> <a class="float-right" href='#'>Discord.com/server</a>
-            <p class="pb-4">@{data.name} {data.sname}</p>
+            <lable className="font-bold"><b>Submitted by</b></lable>  <a className="float-right" href='#'>Website.com</a>
+            <p className="pb-4">@{data.submittedBy}</p>
+            <lable className="font-bold"><b>Project name</b></lable> <a className="float-right" href='#'>Discord.com/server</a>
+            <p className="pb-4">@{data.name} {data.sname}</p>
             </div>
                
 
-        <lable  class="font-bold">Pitch us your project in a tweet</lable>
+        <lable  className="font-bold">Pitch us your project in a tweet</lable>
         <p>Hi,
 
             This is {data.sname} calling from XYZ company. Sorry I missed you.
@@ -94,7 +94,7 @@ const columns = [
     {
         name: 'Votes',
       
-        cell:() =><lable class="vote-badge">4,210</lable>
+        cell:() =><lable className="vote-badge">4,210</lable>
     },
 ];
 
@@ -122,17 +122,17 @@ const Leaderboard = () => {
         
         <div className='main'>
            
-        <div class="w-full  py-6">
-           <ol class="list-reset flex text-grey-dark">
+        <div className="w-full  py-6">
+           <ol className="list-reset flex text-grey-dark">
                 <li><a href="#">Home</a></li>
-                <li><span class="mx-2">></span></li>
+                <li><span className="mx-2">&gt;</span></li>
                 <li><a href="#" >DAO Race</a></li>
-                <li><span class="mx-2" >></span></li>
-                <li class="font-bold">Leaderboard</li>
+                <li><span className="mx-2" >&gt;</span></li>
+                <li className="font-bold">Leaderboard</li>
               </ol>
       </div>
       <div className="leaderboard-list">
-        <div class="flex flex-row">
+        <div className="flex flex-row">
               <div className="basis-3/4"><h2 className=" text-3xl font-extrabold text-gray-900">Trending DAOs</h2></div>
              <div className="basis-1/4 flex  tab-filter">
                <div className=" font-bold active pr-2">Most voted
@@ -141,7 +141,7 @@ const Leaderboard = () => {
                </div>
                </div>
         </div>
-        <div class="dtable">
+        <div className="dtable">
         <DataTable
             customStyles={customStyles}
             columns={columns}
