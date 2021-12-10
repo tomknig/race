@@ -21,3 +21,12 @@ services:
       - ./data:/data/db
     ports:
       - "27017:27017"
+
+  mongo_seed:
+    image: mongo
+    links:
+      - mongo
+    volumes:
+      - ./:/usr/src/app
+    command:
+      /usr/src/app/mongo/import.sh
