@@ -26,6 +26,13 @@ You can now open [http://localhost:3000](http://localhost:3000) in your browser 
 
 - The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## Seed DB
+
+```shell
+mongoimport --host localhost --port 27017 --db race --collection authors --mode upsert --type json --file seed/airtableAuthors.json --jsonArray
+mongoimport --host localhost --port 27017 --db race --collection applications --mode upsert --type json --file seed/airtableApplications.json --jsonArray
+```
+
 ## Linting
 
 Don't forget to lint the code!
