@@ -61,9 +61,9 @@ export default function Home() {
                 <a href="#" className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-opacity-30">DAO Race</a>
                 <a href="https://twitter.com/HyperscaleFund" className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-opacity-30" rel="external noreferrer" target="_blank">Twitter</a>
                 <a href="https://discord.com/invite/pVSbzYny2c" className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-opacity-30" rel="external noreferrer" target="_blank">Discord</a>
-                <button className="inline-flex items-center px-4 py-2 border border-transparent font-medium rounded shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={connectWallet}>
+                {/* <button hidden="hidden" className="inline-flex items-center px-4 py-2 border border-transparent font-medium rounded shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={connectWallet}>
                   { active ? account.substring(0, 4) + "..." + account.substring(length - 4, length) : "Connect Wallet" }
-                </button>
+                </button> */}
               </div>
               {/* Mobile Navigation */}
               <div className="-mr-2 flex items-center md:hidden">
@@ -99,9 +99,9 @@ export default function Home() {
                       <a href="https://twitter.com/HyperscaleFund" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" rel="external noreferrer" target="_blank">Twitter</a>
                       <a href="https://discord.com/invite/pVSbzYny2c" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" rel="external noreferrer" target="_blank">Discord</a>
                     </div>
-                    <button className="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={connectWallet}>
+                    {/* <button hidden="hidden" className="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={connectWallet}>
                       { active ? "Wallet address:" + account.substring(0, 16) + "..." : "Connect Wallet" }
-                    </button>
+                    </button> */}
                   </div>
                 </Popover.Panel>
               </Transition>
