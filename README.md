@@ -49,16 +49,40 @@ Set up:
 2. Add the redirect URI `http://localhost:3000/api/auth/callback/discord`to the Discord application (under the OAuth section)
 3. Copy `.env.example` to `.env.local` and replace XXXX with actually values from Discord application
 
-## Linting
+## Linting and formatting
 
 Don't forget to lint the code!
 
+### Formatting
+
+[Prettier](https://prettier.io) is being used for automatically formatting the code.
+To apply prettier, you can run:
 ```sh
-docker-compose exec web yarn lint
+yarn format
+```
+
+### Scripts
+
+To lint the JavaScript code, run:
+
+```sh
+docker-compose exec web yarn lint:scripts
 ```
 or for dev without docker:
+```sh
+yarn lint:scripts
 ```
-yarn lint
+
+### Styles
+
+To lint styles with [stylelint](https://stylelint.io), run:
+
+```sh
+docker-compose exec web yarn lint:styles
+```
+or for dev without docker:
+```sh
+yarn lint:styles
 ```
 
 ## Contributing
