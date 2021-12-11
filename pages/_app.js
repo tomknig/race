@@ -1,7 +1,7 @@
-import '../styles/globals.css'
-import { Web3ReactProvider } from '@web3-react/core';
-import { SessionProvider } from 'next-auth/react'
-import Web3 from 'web3';
+import "../styles/globals.css";
+import { Web3ReactProvider } from "@web3-react/core";
+import { SessionProvider } from "next-auth/react";
+import Web3 from "web3";
 
 function getLibrary(provider) {
   return new Web3(provider);
@@ -19,15 +19,12 @@ function getLibrary(provider) {
 //   )
 // }
 
-function MyApp({
-  Component,
-  pageProps: { session, ...pageProps },
-}) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
       <Component {...pageProps} />
     </SessionProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

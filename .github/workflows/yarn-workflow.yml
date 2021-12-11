@@ -11,7 +11,13 @@ jobs:
           cmd: install # will run `yarn install` command
       - uses: borales/actions-yarn@v2.3.0
         with:
-          cmd: lint # will run `yarn lint` command
+          cmd: lint:scripts # will run `yarn lint:scripts` command
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: lint:styles # will run `yarn lint:styles` command
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: lint:format # will run `yarn lint:format` command
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: build # will run `yarn build` command

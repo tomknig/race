@@ -57,6 +57,4 @@ const ApplicationSchema = new Schema({
   },
 });
 
-module.exports =
-  mongoose.models.Application ||
-  mongoose.model("Application", ApplicationSchema);
+module.exports = mongoose.models.Application || mongoose.model("Application", ApplicationSchema);
