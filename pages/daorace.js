@@ -89,18 +89,8 @@ export default function DAORace({ projects }) {
                       <div>
                         <Link href="/">
                           <a className="flex items-center gap-x-4">
-                            <Image
-                              src="/logo.svg"
-                              width="60"
-                              height="60"
-                              alt=""
-                            />
-                            <Image
-                              src="/hyperscale.svg"
-                              width="150"
-                              height="80"
-                              alt=""
-                            />
+                            <Image src="/logo.svg" width="60" height="60" alt="" />
+                            <Image src="/hyperscale.svg" width="150" height="80" alt="" />
                           </a>
                         </Link>
                       </div>
