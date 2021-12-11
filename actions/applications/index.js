@@ -1,4 +1,5 @@
 import dbConnect from "../../utils/dbConnect";
+import { Types } from "mongoose";
 
 // this function upsert a list of records, used for syncing data
 export async function upsertApplications(records) {
@@ -19,6 +20,14 @@ export async function upsertApplications(records) {
 export async function getApplications() {
   await dbConnect();
   const Application = require("../../models/Application");
-  const data = await Application.find();
+  const data = await Application.find({});
+  return data;
+}
+
+// query selected applications
+export async function getSelectedApplications(applicationId) {
+  await dbConnect();
+  const Application = require("../../models/Application");
+  const data = await Application.find({ _id: Types.ObjectId(applicationId) });
   return data;
 }
