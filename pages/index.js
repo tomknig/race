@@ -4,39 +4,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { signIn } from "next-auth/react";
 import styles from '../styles/Home.module.css';
 
 
 // components
 import Explanation from '../components/Explanation/Explanation';
-import { useWeb3React } from '@web3-react/core';
-import { injected } from '../components/wallet/connectors';
 
 export default function Home() {
-
-  const { active, account, library, connector, activate, deactivate } = useWeb3React();
-
-  async function connectWallet() {
-
-    try {
-
-      await activate(injected);
-
-    } catch (ex) {
-      console.log(ex);
-    }
-  }
-
-  // Use this to disconnect
-  async function disconnectWallet() {
-
-    try {
-      await deactivate();
-    }  catch (ex) {
-      console.log(ex);
-    }
-  }
-
   return (
     <>
       <Head>
@@ -65,10 +40,7 @@ export default function Home() {
                 </Link>
                 <a href="https://twitter.com/HyperscaleFund" className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-opacity-30" rel="external noreferrer" target="_blank">Twitter</a>
                 <a href="https://discord.com/invite/pVSbzYny2c" className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-opacity-30" rel="external noreferrer" target="_blank">Discord</a>
-                <button className="inline-flex items-center px-4 py-2 border border-transparent font-medium rounded shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={connectWallet}>
-                Connect Discord
-                </button>
-
+                <button hidden="hidden" className="inline-flex items-center px-4 py-2 border border-transparent font-medium rounded shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={() => signIn("discord")}>Connect Discord</button>
               </div>
               {/* Mobile Navigation */}
               <div className="-mr-2 flex items-center md:hidden">
@@ -107,7 +79,7 @@ export default function Home() {
                       <a href="https://discord.com/invite/pVSbzYny2c" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" rel="external noreferrer" target="_blank">Discord</a>
                     </div>
 
-                    <button className="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={connectWallet}>
+                    <button className="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={() => signIn("discord")}>
                       Connect Discord
                     </button>
 

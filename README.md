@@ -43,6 +43,12 @@ mongoimport --host mongodb --port 27017 --db race --collection authors --mode up
 mongoimport --host mongodb --port 27017 --db race --collection applications --mode upsert --type json --file seed/airtableApplications.json --jsonArray
 ```
 
+## Discord Authentication
+Set up:
+1. Create a custom [Discord application](https://discord.com/developers/applications)
+2. Add the redirect URI `http://localhost:3000/api/auth/callback/discord`to the Discord application (under the OAuth section)
+3. Copy `.env.example` to `.env.local` and replace XXXX with actually values from Discord application
+
 ## Linting
 
 Don't forget to lint the code!
