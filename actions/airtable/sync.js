@@ -6,7 +6,7 @@ export function getAirtableApplicationRecords() {
   return new Promise((r, reject) => {
     const base = Airtable.base(process.env.AIRTABLE_BASE);
     let results = [];
-    base("Grid view")
+    base("Table 1")
       .select({
         view: "Grid view",
       })
