@@ -14,3 +14,11 @@ export async function upsertApplications(records) {
   }
   return results;
 }
+
+// query all applications
+export async function getApplications() {
+  await dbConnect();
+  const Application = require("../../models/Application");
+  const data = await Application.find();
+  return data;
+}
