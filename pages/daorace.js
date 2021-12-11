@@ -166,6 +166,7 @@ export default function DAORace({ projects }) {
 
 export async function getServerSideProps(context) {
   const projects = JSON.parse(JSON.stringify(await getApplications()));
+  console.log(projects, process.env.MONGO_URL);
   return {
     props: {
       projects,
