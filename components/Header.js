@@ -3,10 +3,32 @@ import Image from "next/image";
 import Link from "next/link";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const connectWallet = () => alert(`Coming soon!`);
 
 export default function Header() {
+  const { data: _, status } = useSession();
+
+  let mainButton = (
+    <button
+      className="inline-flex items-center px-4 py-2 border border-transparent font-medium rounded shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      onClick={() => signIn("discord")}
+    >
+      Connect Discord
+    </button>
+  );
+
+  if (status === "authenticated") {
+    mainButton = (
+      <button
+        className="inline-flex items-center px-4 py-2 border border-transparent font-medium rounded shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        onClick={() => signOut("discord")}
+      >
+        Sign Out
+      </button>
+    );
+  }
   return (
     <nav>
       <Popover className="flex items-center justify-between">
@@ -46,12 +68,7 @@ export default function Header() {
           >
             Discord
           </a>
-          <button
-            className="inline-flex items-center px-4 py-2 border border-transparent font-medium rounded shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            onClick={connectWallet}
-          >
-            Connect Discord
-          </button>
+          {mainButton}
         </div>
         {/* Mobile Navigation */}
         <div className="-mr-2 flex items-center md:hidden">
