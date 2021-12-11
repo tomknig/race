@@ -15,6 +15,50 @@ a {
   box-sizing: border-box;
 }
 
+
+.container {
+  padding: 0 2rem;
+  }
+.main{
+  padding: 2rem 0;
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  }
+
+  .dtable button:active,
+  .dtable button:focus,
+  .dtable button:hover{
+    background:none !important;
+  }
+  .dtable a{
+    color: #6366f1;
+  }
+.tab-filter div{
+  border-bottom: 1px solid;
+  padding-bottom: 1.5rem;
+}
+.tab-filter .active{
+  border-bottom: 3px solid;
+}
+.vote-badge{
+background-color:black;
+color:white;
+border-radius: 0.25rem;
+padding: 0.25rem 0.5rem;
+}
+.top-border{
+ border-top: 1px rgb(0 0 0 / 5%) solid;
+}
+.rdt_Pagination{
+  border:0 !important;
+}
+.rdt_ExpanderRow{
+  z-index: 1;
+  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+  width: auto !important;
+  border-radius:0 0 0.5rem 0.5rem;
+  margin:-15px 12px 0 12px;
+    }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
