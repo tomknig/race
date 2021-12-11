@@ -3,33 +3,58 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const ApplicationSchema = new Schema({
-  author: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Author",
+  id: {
+    type: Schema.Types.ObjectId,
   },
-
-  submissionDate: { type: Date, default: Date.now },
-
-  // copied from Airtable
-  projectName: String,
-  shortPitch: String,
-  extendedPitch: String,
-  projectGoals: String,
-  leaderStatement: String,
-  projectURL: String,
-  additionalDetails: String,
-  referral: String,
-  hasReferral: mongoose.SchemaTypes.Boolean,
-  helpfulLinks: String,
-  helpfulUploads: mongoose.SchemaTypes.Mixed,
-  evidence: String,
-  background: String,
-  pitch: String,
-
-  ranking: Number,
-  votes: Number,
-
-  airtableRecordId: String, // to avoid duplicates
+  projectName: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  projectGoal: {
+    type: String,
+    default: null,
+  },
+  leaderStatement: {
+    type: String,
+    default: null,
+  },
+  projectURL: {
+    type: String,
+    default: null,
+  },
+  additionalDetails: {
+    type: String,
+    default: null,
+  },
+  referrals: {
+    type: String,
+    defautl: null,
+  },
+  helpfulLink: {
+    type: String,
+    default: null,
+  },
+  evidenceOfExceptionalAbility: {
+    type: String,
+    default: null,
+  },
+  founderBackground: {
+    type: String,
+    default: null,
+  },
+  pitch: {
+    type: String,
+    default: null,
+  },
+  ethAddress: {
+    type: String,
+    default: null,
+  },
 });
 
 module.exports =
