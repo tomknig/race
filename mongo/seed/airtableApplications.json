@@ -1,87 +1,16 @@
 [
   {
-    "airtableRecordId": "rec1",
-    "createdTime": "2021-12-08T13:55:09.000Z",
-    "author": {
-      "$oid": "61b366c9b1b49d305c8f63c2"
-    },
-    "projectName": "Testing",
-    "shortPitch": "Hyperscale testing: testing fast funding for web3.",
-    "extendedPitch": "Automated testing of ⚡📈 forms and primitives",
-    "projectGoals": "Getting this proposal through the system",
+    "ethAddress": "0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "projectName": "Test",
+    "description": "Hyperscale testing: testing fast funding for web3.",
+    "projectGoal": "Getting this proposal through the system",
     "leaderStatement": "Getting this proposal through the system",
-    "projectURL": "tom.eth",
+    "projectUrl": "tom.eth",
     "additionalDetails": "not required",
-    "referral": "(⚡,⚡)",
-    "hasReferral": true,
-    "votes": 2
+    "referrals": "https://twitter.com/sama"
   },
   {
-    "airtableRecordId": "rec2",
-    "createdTime": "2021-12-09T13:55:09.000Z",
-    "author": {
-      "$oid": "61b366c9b1b49d305c8f63c2"
-    },
-    "projectName": "Testing",
-    "shortPitch": "A short pitch test.",
-    "extendedPitch": "Automated testing of ⚡📈 forms and primitives",
-    "projectGoals": "Getting this proposal through the system",
-    "leaderStatement": "Getting this proposal through the system",
-    "projectURL": "testing.eth",
-    "additionalDetails": "not required",
-    "referral": "",
-    "hasReferral": false,
-    "votes": 10
-  },
-  {
-    "airtableRecordId": "rec3",
-    "createdTime": "2021-12-09T14:55:09.000Z",
-    "author": {
-      "$oid": "61b366c9b1b49d305c8f63c2"
-    },
-    "projectName": "Testing",
-    "shortPitch": "A short pitch test.",
-    "extendedPitch": "Automated testing of ⚡📈 forms and primitives",
-    "projectGoals": "Getting this proposal through the system",
-    "leaderStatement": "Getting this proposal through the system",
-    "projectURL": "testing.eth",
-    "additionalDetails": "not required",
-    "referral": "",
-    "hasReferral": false,
-    "votes": 5
-  },
-  {
-    "airtableRecordId": "rec4",
-    "createdTime": "2021-12-10T08:55:09.000Z",
-    "author": {
-      "$oid": "61b366c9b1b49d305c8f63c2"
-    },
-    "projectName": "Testing",
-    "shortPitch": "A short pitch test.",
-    "extendedPitch": "Automated testing of ⚡📈 forms and primitives",
-    "projectGoals": "Getting this proposal through the system",
-    "leaderStatement": "Getting this proposal through the system",
-    "projectURL": "testing.eth",
-    "additionalDetails": "not required",
-    "referral": "",
-    "hasReferral": false,
-    "votes": 15
-  },
-  {
-    "airtableRecordId": "rec5",
-    "createdTime": "2021-12-10T12:55:09.000Z",
-    "author": {
-      "$oid": "61b366c9b1b49d305c8f63c2"
-    },
-    "projectName": "Testing",
-    "shortPitch": "A short pitch test.",
-    "extendedPitch": "Automated testing of ⚡📈 forms and primitives",
-    "projectGoals": "Getting this proposal through the system",
-    "leaderStatement": "Getting this proposal through the system",
-    "projectURL": "testing.eth",
-    "additionalDetails": "not required",
-    "referral": "",
-    "hasReferral": true,
-    "votes": 4
+    "projectName": "SUPER TEST",
+    "description": "SUPER TEST"
   }
 ]

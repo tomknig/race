@@ -1,7 +1,29 @@
 import Layout from "../components/Layout";
 import Leaderboard from "../components/Leaderboard/Leaderboard";
 
-export default function Home() {
+export default function DAORace({ projects }) {
+  const { data: _, status } = useSession();
+
+  const mainButton = (
+    <button
+      className="inline-flex items-center px-4 py-2 border border-transparent font-medium rounded shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      onClick={() => signIn("discord")}
+    >
+      Connect Discord
+    </button>
+  );
+
+  if (status === "authenticated") {
+    mainButton = (
+      <button
+        className="inline-flex items-center px-4 py-2 border border-transparent font-medium rounded shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        onClick={() => signOut("discord")}
+      >
+        Sign Out
+      </button>
+    );
+  }
+
   return (
     <Layout title="DAO Race">
       <Leaderboard />
@@ -30,4 +52,13 @@ export default function Home() {
       </div> */}
     </Layout>
   );
+}
+
+export async function getServerSideProps(context) {
+  const projects = JSON.parse(JSON.stringify(await getApplications()));
+  return {
+    props: {
+      projects,
+    },
+  };
 }
