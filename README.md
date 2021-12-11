@@ -36,12 +36,14 @@ You can now open [http://localhost:3000](http://localhost:3000) in your browser 
 
 ## Seed DB
 
-If you are using MongoDB with docker-compose the test data is already there. Otherwise you can import test data manually:
+If you are using MongoDB with docker-compose the test data is already there.
+In case you want to change test data just modify json files in mongo/seed and run:
 
-```shell
-mongoimport --host mongodb --port 27017 --db race --collection authors --mode upsert --type json --file seed/airtableAuthors.json --jsonArray
-mongoimport --host mongodb --port 27017 --db race --collection applications --mode upsert --type json --file seed/airtableApplications.json --jsonArray
 ```
+docker-compose up mongo_seed
+```
+
+**Note**: Please do not add users' private data.
 
 ## Discord Authentication
 Set up:
