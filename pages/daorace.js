@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { getApplications } from "../actions/applications";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 // components
 import Leaderboard from "../components/Leaderboard/Leaderboard";
@@ -12,6 +13,23 @@ import Leaderboard from "../components/Leaderboard/Leaderboard";
 const connectWallet = () => alert(`Coming soon!`);
 
 export default function DAORace({ projects }) {
+
+  const { data: _, status } = useSession()
+
+  const mainButton = (
+    <button className="inline-flex items-center px-4 py-2 border border-transparent font-medium rounded shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={() => signIn("discord")}>
+      Connect Discord
+    </button>
+  )
+
+  if (status === "authenticated") {
+    mainButton = (
+      <button className="inline-flex items-center px-4 py-2 border border-transparent font-medium rounded shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={() => signOut("discord")}>
+      Sign Out
+      </button>
+    )
+  }
+
   return (
     <>
       <Head>
@@ -57,12 +75,8 @@ export default function DAORace({ projects }) {
                 >
                   Discord
                 </a>
-                <button
-                  className="inline-flex items-center px-4 py-2 border border-transparent font-medium rounded shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  onClick={connectWallet}
-                >
-                  Connect Discord
-                </button>
+
+                {mainButton}
               </div>
               {/* Mobile Navigation */}
               <div className="-mr-2 flex items-center md:hidden">
@@ -129,12 +143,8 @@ export default function DAORace({ projects }) {
                         Discord
                       </a>
                     </div>
-                    <button
-                      className="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      onClick={connectWallet}
-                    >
-                      Connect Discord
-                    </button>
+
+                    {mainButton}
                   </div>
                 </Popover.Panel>
               </Transition>
