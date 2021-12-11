@@ -12,9 +12,7 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      mongo:
-        condition: service_healthy
-
+      - mongo
   mongo:
     container_name: mongo
     image: mongo
@@ -23,11 +21,6 @@ services:
       - ./data:/data/db
     ports:
       - "27017:27017"
-    healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongo localhost:27017 --quiet
-      interval: 1s
-      timeout: 10s
-      start_period: 5s
 
   mongo_seed:
     image: mongo
@@ -37,6 +30,3 @@ services:
       - ./:/usr/src/app
     command:
       /usr/src/app/mongo/import.sh
-    depends_on:
-      mongo:
-        condition: service_healthy
