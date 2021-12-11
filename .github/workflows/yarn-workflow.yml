@@ -6,18 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: install # will run `yarn install` command
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: lint:scripts # will run `yarn lint:scripts` command
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: lint:styles # will run `yarn lint:styles` command
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: lint:format # will run `yarn lint:format` command
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: build # will run `yarn build` command
+      - name: Build the stack
+        run: |
+          docker-compose up -d
+          docker container ls
+      - name: List scripts
+        run: docker-compose exec -T web yarn lint:scripts
+      - name: List styles
+        run: docker-compose exec -T web yarn lint:styles
+      - name: List format
+        run: docker-compose exec -T web yarn lint:format

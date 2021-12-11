@@ -10,4 +10,4 @@ ENV MONGO_URL "mongodb://mongo:27017/race"
 RUN yarn install --frozen-lockfile
 RUN yarn build
 
-CMD [ "yarn", "start" ]
+CMD ["yarn", "dev"]
