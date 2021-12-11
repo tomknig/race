@@ -30,7 +30,7 @@ const ExpandedComponent = ({ data }) => (
       me at +91 9999999999 if you’d like to learn more. But I’ll follow up soon.{" "}
     </p>
     <br />
-    <Link href={{ pathname: "/[id]", query: { id: data.id } }}>View full application</Link>
+    <Link href={{ pathname: "/dao-race/[id]", query: { id: data.id } }}>View full application</Link>
   </div>
 );
 
@@ -121,11 +121,12 @@ const data = [
     dateSubmitted: "1 day ago",
   },
 ];
+const breadcrumbs = ["Home", "DAO Race"];
 
-const Leaderboard = () => {
+const Leaderboard = ({}) => {
   return (
     <div className="main">
-      <Breadcrumbs pageName="Leaderboard" />
+      <Breadcrumbs list={breadcrumbs} />
       <div className="leaderboard-list">
         <div className="flex flex-row">
           <div className="basis-3/4">

@@ -15,79 +15,72 @@ const titles = {
   uploads: "Uploads",
   voteFor: "Votes for",
   flag: "Flag",
-}; // for future translation
+}; // for future translations
 
-const data = {
-  id: 1,
-  name: "Community Chest",
-  imgUrl: "",
-  submittedBy: "@MallorySantiago",
-  shortName: "👩‍,💵",
-  shortDesc:
-    "Contribute money to the communty chest and we use the money to host events using that money. The more money we collect the better the events! Upcomming events include a talk with Naval, a concert by Odeza, and a cooking class by chef boyardee.",
-  fullDesc:
-    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
-  background:
-    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
-  evidence:
-    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
-  misc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
-  links: [
-    {
-      url: "https://hyperscalefund.com",
-      text: "Lorem ipsum dit alor",
-    },
-    {
-      url: "https://hyperscalefund.com",
-      text: "Sed ut perspiciatis",
-    },
-  ],
-  uploads: [
-    {
-      url: "#",
-      text: "xyz.pdf",
-    },
-    {
-      url: "#",
-      text: "img1.png",
-    },
-  ],
-  votes: 4200,
-  voters: [
-    {
-      username: "rekpero",
-      power: "400",
-      image: "",
-    },
-    {
-      username: "michelspencer",
-      power: "1400",
-      image: "",
-    },
-    {
-      username: "naderdabit",
-      power: "3400",
-      image: "",
-    },
-    {
-      username: "miguel",
-      power: "2400",
-      image: "",
-    },
-    {
-      username: "teddyburnette",
-      power: "600",
-      image: "",
-    },
-  ],
-};
-
-export default function Application() {
+export default function Application({ application }) {
+  const data = {
+    id: 1,
+    name: application.projectName,
+    imgUrl: "",
+    submittedBy: "@MallorySantiago",
+    shortName: "👩‍,💵",
+    projectUrl: application.projectUrl,
+    shortDesc: application.pitch,
+    fullDesc: application.description,
+    background: application.founderBackground,
+    evidence: application.evidenceOfExceptionalAbility,
+    misc: application.additionalDetails,
+    links: [
+      {
+        url: application.helpfulLink,
+        text: application.helpfulLink?.split("//")[1],
+      },
+    ],
+    uploads: [
+      {
+        url: "#",
+        text: "xyz.pdf",
+      },
+      {
+        url: "#",
+        text: "img1.png",
+      },
+    ],
+    votes: 4200,
+    voters: [
+      {
+        username: "rekpero",
+        power: "400",
+        image: "",
+      },
+      {
+        username: "michelspencer",
+        power: "1400",
+        image: "",
+      },
+      {
+        username: "naderdabit",
+        power: "3400",
+        image: "",
+      },
+      {
+        username: "miguel",
+        power: "2400",
+        image: "",
+      },
+      {
+        username: "teddyburnette",
+        power: "600",
+        image: "",
+      },
+    ],
+  };
+  const breadcrumbs = ["Home", "Applications", data.name];
   return (
     <Layout title={data.name}>
       <div className="divide-y divide-gray-300">
         <div>
-          <Breadcrumbs pageName={data.name} />
+          <Breadcrumbs list={breadcrumbs} />
           <h1 className="text-3xl font-bold leading-7 text-gray-900 sm:text-5xl sm:truncate sm:leading-normal mb-8">
             {data.name}
           </h1>
@@ -102,7 +95,10 @@ export default function Application() {
                   <dd>{data.submittedBy}</dd>
                 </div>
                 <div className="flex flex-row h-[fit-content]">
-                  <div className="text-gray-400 border border-gray-400 bg-gray-200 rounded-lg p-2 mx-2">
+                  <div
+                    className="text-gray-400 border border-gray-400 bg-gray-200 hover:bg-gray-300 rounded-lg p-2 mx-2 cursor-pointer"
+                    onClick={(e) => window.open(data.projectUrl, "_blank")}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
@@ -127,19 +123,19 @@ export default function Application() {
                   {data.name} ({data.shortName})
                 </dd>
                 <dt className="font-semibold">{titles.shortDesc}</dt>
-                <dd className="mb-5">{data.shortDesc}</dd>
+                <dd className="mb-5">{data.shortDesc || "N.A"}</dd>
               </dl>
             </div>
           </div>
           <dl>
             <dt className="font-semibold">{titles.fullDesc}</dt>
-            <dd className="mb-5">{data.fullDesc}</dd>
+            <dd className="mb-5">{data.fullDesc || "N.A"}</dd>
             <dt className="font-semibold">{titles.background}</dt>
-            <dd className="mb-5">{data.background}</dd>
+            <dd className="mb-5">{data.background || "N.A"}</dd>
             <dt className="font-semibold">{titles.evidence}</dt>
-            <dd className="mb-5">{data.evidence}</dd>
+            <dd className="mb-5">{data.evidence || "N.A"}</dd>
             <dt className="font-semibold">{titles.misc}</dt>
-            <dd className="mb-5">{data.misc}</dd>
+            <dd className="mb-5">{data.misc || "N.A"}</dd>
             <dt className="font-semibold mb-3">{titles.links}</dt>
             <dd className="mb-5">
               <ul className="link-list list-disc pl-5">
@@ -167,7 +163,7 @@ export default function Application() {
           </dl>
           <div className="mb-5 flex flex-row">
             <Vote votes={data.votes} />
-            <div className="text-gray-600 border border-gray-600 bg-gray-200 rounded-lg py-2 px-6 mx-2 font-semibold">
+            <div className="text-gray-600 border border-gray-600 bg-gray-200 rounded-lg py-2 px-6 mx-2 font-semibold hover:bg-gray-300 cursor-pointer">
               Flag
             </div>
           </div>
@@ -185,4 +181,26 @@ export default function Application() {
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps(context) {
+  const id = context.params.id;
+  // const application = JSON.parse(JSON.stringify(await getSelectedApplications(id)));
+  const application = {
+    ethAddress: "0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    projectName: "Test",
+    description: "Hyperscale testing: testing fast funding for web3.",
+    projectGoal: "Getting this proposal through the system",
+    leaderStatement: "Getting this proposal through the system",
+    projectUrl: "tom.eth",
+    additionalDetails: "not required",
+    referrals: "https://twitter.com/sama",
+    helpfulLink: "https://hyper.scale",
+  };
+  console.log(application);
+  return {
+    props: {
+      application,
+    },
+  };
 }
