@@ -25,7 +25,7 @@ export default function Application({ data }) {
     { url: "", text: data.projectName },
   ];
   // console.log(data)
-  console.log(data)
+  console.log(data);
   return (
     <Layout title={data.projectName}>
       <div className="divide-y divide-gray-300">
@@ -135,9 +135,9 @@ export default function Application({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  console.log("GETTING ID", id)
+  console.log("GETTING ID", id);
   const fetchedApplications = JSON.parse(JSON.stringify(await getSelectedApplications(id)));
-  const data = fetchedApplications[0]
+  const data = fetchedApplications[0];
   return {
     props: {
       data,

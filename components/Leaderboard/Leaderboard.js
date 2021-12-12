@@ -24,9 +24,7 @@ const ExpandedComponent = ({ data }) => (
     </div>
 
     <label className="font-bold">Pitch us your project in a tweet</label>
-    <p>
-      {data.description}
-    </p>
+    <p>{data.description}</p>
     <br />
     <Link href={{ pathname: "/dao-race/[id]", query: { id: data._id } }}>View full application</Link>
   </div>
@@ -105,7 +103,7 @@ const breadcrumbs = [
   { url: "", text: "DAO Race" },
 ];
 
-const Leaderboard = ({data}) => {
+const Leaderboard = ({ data }) => {
   return (
     <div className="main">
       <Breadcrumbs list={breadcrumbs} />
