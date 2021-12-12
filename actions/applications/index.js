@@ -22,3 +22,12 @@ export async function getApplications() {
   const data = await Application.find();
   return data;
 }
+
+export async function vote(applicationId, voterEmail) {
+  await dbConnect();
+  const Application = require("../../models/Application");
+  return Application.findOneAndUpdate(
+    { _id: applicationId }, 
+    { $addToSet: { votes: voterEmail } }
+  );
+}
