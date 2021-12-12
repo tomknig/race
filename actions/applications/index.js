@@ -43,7 +43,6 @@ export async function getApplications(query, email) {
   }
 
   const data = await Application.aggregate(pipeline);
-  console.log(data)
   return data;
 }
 
