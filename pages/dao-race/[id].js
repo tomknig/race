@@ -18,6 +18,7 @@ const titles = {
 }; // for future translations
 
 export default function Application({ application }) {
+
   const data = {
     id: 1,
     name: application.projectName,
@@ -76,6 +77,7 @@ export default function Application({ application }) {
     ],
   };
   const breadcrumbs = ["Home", "Applications", data.name];
+
   return (
     <Layout title={data.name}>
       <div className="divide-y divide-gray-300">
@@ -114,7 +116,7 @@ export default function Application({ application }) {
                       />
                     </svg>
                   </div>
-                  <Vote votes={data.votes} />
+                  <Vote votes={data.votes} applicationId={data.id} />
                 </div>
               </div>
               <dl>
@@ -162,8 +164,8 @@ export default function Application({ application }) {
             </dd>
           </dl>
           <div className="mb-5 flex flex-row">
-            <Vote votes={data.votes} />
-            <div className="text-gray-600 border border-gray-600 bg-gray-200 rounded-lg py-2 px-6 mx-2 font-semibold hover:bg-gray-300 cursor-pointer">
+            <Vote votes={data.votes} applicationId={data.id} />
+            <div className="text-gray-60Z0 border border-gray-600 bg-gray-200 rounded-lg py-2 px-6 mx-2 font-semibold hover:bg-gray-300 cursor-pointer">
               Flag
             </div>
           </div>
@@ -182,6 +184,7 @@ export default function Application({ application }) {
     </Layout>
   );
 }
+
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
