@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Header from "../components/Header";
+import Header from "../Header/Header";
 
-export default function Layout({ title = "Hyperscale", breadcrumb, children }) {
+export default function Layout({ title = "Hyperscale", children }) {
   const pageTitle = title !== "Hyperscale" ? `Hyperscale - ${title}` : title;
   return (
     <>

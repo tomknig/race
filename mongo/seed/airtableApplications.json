@@ -7,10 +7,12 @@
     "leaderStatement": "Getting this proposal through the system",
     "projectUrl": "tom.eth",
     "additionalDetails": "not required",
-    "referrals": "https://twitter.com/sama"
+    "referrals": "https://twitter.com/sama",
+    "votes": []
   },
   {
     "projectName": "SUPER TEST",
-    "description": "SUPER TEST"
+    "description": "SUPER TEST",
+    "votes": []
   }
 ]
