@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout";
-import Leaderboard from "../../components/Leaderboard/Leaderboard";
+import Leaderboard from "../../components/Leaderboard";
 import { getApplications } from "../../actions/applications";
 
 export default function DaoRace({ projects }) {

@@ -47,7 +47,7 @@ export default function Header() {
             Home
           </Link>
           <Link
-            href="/daorace"
+            href="/dao-race"
             className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-opacity-30"
           >
             DAO Race
@@ -113,7 +113,7 @@ export default function Header() {
                     Home
                   </a>
                 </Link>
-                <Link href="/daorace">
+                <Link href="/dao-race">
                   <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
                     DAO Race
                   </a>

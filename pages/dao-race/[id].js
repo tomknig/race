@@ -6,8 +6,8 @@ import Voter from "../../components/Voter";
 const titles = {
   name: "Project name",
   submittedBy: "Submitted by",
-  shortDesc: '"Pitch us your project in a tweet"',
-  fullDesc: "Full pitch",
+  pitch: '"Pitch us your project in a tweet"',
+  description: "Full pitch",
   background: "Background of each founder",
   evidence: "Evidence of exceptional ability for each founder",
   misc: "Is there anything else we should know about?",
@@ -25,7 +25,7 @@ export default function Application({ application }) {
     submittedBy: "@MallorySantiago",
     shortName: "👩‍,💵",
     projectUrl: application.projectUrl,
-    shortDesc: application.pitch,
+    pitch: application.pitch,
     fullDesc: application.description,
     background: application.founderBackground,
     evidence: application.evidenceOfExceptionalAbility,
@@ -75,7 +75,11 @@ export default function Application({ application }) {
       },
     ],
   };
-  const breadcrumbs = ["Home", "Applications", data.name];
+  const breadcrumbs = [
+    { url: "/", text: "Home" },
+    { url: "/dao-race", text: "DAO Race" },
+    { url: "", text: data.name },
+  ];
   return (
     <Layout title={data.name}>
       <div className="divide-y divide-gray-300">
@@ -122,8 +126,8 @@ export default function Application({ application }) {
                 <dd className="mb-5">
                   {data.name} ({data.shortName})
                 </dd>
-                <dt className="font-semibold">{titles.shortDesc}</dt>
-                <dd className="mb-5">{data.shortDesc || "N.A"}</dd>
+                <dt className="font-semibold">{titles.pitch}</dt>
+                <dd className="mb-5">{data.pitch || "N.A"}</dd>
               </dl>
             </div>
           </div>
