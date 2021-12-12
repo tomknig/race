@@ -1,4 +1,4 @@
-export default function Vote({ applicationId, voteCount, onVote }) {
+export default function Vote({ applicationId, voteCount }) {
   return (
     <div className="flex flex-row cursor-pointer w-[fit-content]">
       <div className="flex-1 py-2 px-4 border border-indigo-500 rounded-l-lg font-medium text-indigo-500">
