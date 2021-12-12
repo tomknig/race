@@ -55,6 +55,10 @@ const ApplicationSchema = new Schema({
     type: String,
     default: null,
   },
+  votes: {
+    type: [String],
+    default: [],
+  },
 });
 
 module.exports = mongoose.models.Application || mongoose.model("Application", ApplicationSchema);
