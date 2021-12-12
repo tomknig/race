@@ -58,7 +58,7 @@ const ApplicationSchema = new Schema({
   votes: {
     type: [String],
     default: [],
-  }
+  },
 });
 
 module.exports = mongoose.models.Application || mongoose.model("Application", ApplicationSchema);

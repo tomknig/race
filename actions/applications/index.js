@@ -23,7 +23,7 @@ export async function getApplications() {
   return data;
 }
 
-export async function vote(applicationId, voterEmail) {
+export async function addVote(applicationId, voterEmail) {
   await dbConnect();
   const Application = require("../../models/Application");
   return Application.findOneAndUpdate(
