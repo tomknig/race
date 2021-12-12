@@ -31,3 +31,12 @@ export async function getSelectedApplications(applicationId) {
   const data = await Application.find({ _id: Types.ObjectId(applicationId) });
   return data;
 }
+
+export async function addVote(applicationId, voterEmail) {
+  await dbConnect();
+  const Application = require("../../models/Application");
+  return Application.findOneAndUpdate(
+    { _id: applicationId }, 
+    { $addToSet: { votes: voterEmail } }
+  );
+}
