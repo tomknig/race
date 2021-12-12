@@ -4,7 +4,7 @@ import Layout from "../../components/Layout";
 export default function Application({ data }) {
   return (
     <Layout title={data.projectName}>
-      <ApplicationDetails application={data} />
+      <ApplicationDetails data={data} />
     </Layout>
   );
 }

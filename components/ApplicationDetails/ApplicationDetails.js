@@ -1,5 +1,4 @@
 import Vote from "../Vote";
-import Voter from "../Voter";
 import Breadcrumbs from "../Breadcrumbs";
 
 const titles = {
@@ -16,64 +15,7 @@ const titles = {
   flag: "Flag",
 }; // for future translations
 
-const ApplicationDetails = ({ application }) => {
-  const data = {
-    id: 1,
-    name: application.projectName,
-    imgUrl: "",
-    submittedBy: "@MallorySantiago",
-    shortName: "👩‍,💵",
-    projectUrl: application.projectUrl,
-    pitch: application.pitch,
-    fullDesc: application.description,
-    background: application.founderBackground,
-    evidence: application.evidenceOfExceptionalAbility,
-    misc: application.additionalDetails,
-    links: [
-      {
-        url: application.helpfulLink,
-        text: application.helpfulLink?.split("//")[1],
-      },
-    ],
-    uploads: [
-      {
-        url: "#",
-        text: "xyz.pdf",
-      },
-      {
-        url: "#",
-        text: "img1.png",
-      },
-    ],
-    votes: 4200,
-    voters: [
-      {
-        username: "rekpero",
-        power: "400",
-        image: "",
-      },
-      {
-        username: "michelspencer",
-        power: "1400",
-        image: "",
-      },
-      {
-        username: "naderdabit",
-        power: "3400",
-        image: "",
-      },
-      {
-        username: "miguel",
-        power: "2400",
-        image: "",
-      },
-      {
-        username: "teddyburnette",
-        power: "600",
-        image: "",
-      },
-    ],
-  };
+const ApplicationDetails = ({ data }) => {
   const breadcrumbs = [
     { url: "/", text: "Home" },
     { url: "/dao-race", text: "DAO Race" },
@@ -97,7 +39,7 @@ const ApplicationDetails = ({ application }) => {
           </svg>
         </div>
         <h1 className="text-3xl font-bold leading-7 text-gray-900 sm:text-5xl sm:truncate sm:leading-normal mb-8">
-          {data.name}
+          {data.projectName}
         </h1>
         <div className="block sm:flex sm:flex-row sm:space-x-8 mb-12">
           <div className="sm:basis-1/3">
@@ -129,13 +71,13 @@ const ApplicationDetails = ({ application }) => {
                     />
                   </svg>
                 </div>
-                <Vote votes={data.votes} />
+                <Vote votes={data.voteCount} applicationId={data._id} />
               </div>
             </div>
             <dl>
               <dt className="font-semibold">{titles.name}</dt>
               <dd className="mb-5">
-                {data.name} ({data.shortName})
+                {data.projectName} ({data.shortName})
               </dd>
               <dt className="font-semibold">{titles.pitch}</dt>
               <dd className="mb-5">{data.pitch || "N.A"}</dd>
@@ -154,25 +96,25 @@ const ApplicationDetails = ({ application }) => {
           <dt className="font-semibold mb-3">{titles.links}</dt>
           <dd className="mb-5">
             <ul className="link-list list-disc pl-5">
-              {data.links.map((link, i) => (
+              {/* {data.links.map((link, i) => (
                 <li key={`link-${i}`}>
                   <a href={link.url} target="_blank" rel="noreferrer">
                     {link.text}
                   </a>
                 </li>
-              ))}
+              ))} */}
             </ul>
           </dd>
           <dt className="font-semibold mb-3">{titles.uploads}</dt>
           <dd className="mb-5">
             <ul className="link-list list-disc pl-5">
-              {data.uploads.map((upload, i) => (
+              {/* {data.uploads.map((upload, i) => (
                 <li key={`upload-${i}`}>
                   <a href={upload.url} target="_blank" rel="noreferrer">
                     {upload.text}
                   </a>
                 </li>
-              ))}
+              ))} */}
             </ul>
           </dd>
         </dl>
@@ -203,9 +145,9 @@ const ApplicationDetails = ({ application }) => {
         <div className="my-5">
           <div className="uppercase font-bold mb-3">{titles.voteFor}</div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full lg:w-2/3">
-            {data.voters.map((voter, i) => (
+            {/* {data.voters.map((voter, i) => (
               <Voter voter={voter.username} power={voter.power} image={voter.image} key={i} />
-            ))}
+            ))} */}
           </div>
         </div>
       </div>
