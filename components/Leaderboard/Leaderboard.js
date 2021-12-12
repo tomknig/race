@@ -19,18 +19,14 @@ const ExpandedComponent = ({ data }) => (
         Discord.com/server
       </a>
       <p className="pb-4">
-        @{data.name} {data.sname}
+        @{data.projectName} {data.sname}
       </p>
     </div>
 
     <label className="font-bold">Pitch us your project in a tweet</label>
-    <p>
-      Hi, This is {data.sname} calling from XYZ company. Sorry I missed you. I was hoping to speak to you about
-      Hyper-Scale. We’ve helped other companies and I think may be able to help you get similar results. You can reach
-      me at +91 9999999999 if you’d like to learn more. But I’ll follow up soon.{" "}
-    </p>
+    <p>{data.description}</p>
     <br />
-    <Link href={{ pathname: "/dao-race/[id]", query: { id: data.id } }}>View full application</Link>
+    <Link href={{ pathname: "/dao-race/[id]", query: { id: data._id } }}>View full application</Link>
   </div>
 );
 
@@ -86,7 +82,7 @@ const columns = [
   },
   {
     name: "Name",
-    selector: (row) => row.name,
+    selector: (row) => row.projectName,
   },
   {
     name: "Submitted by",
@@ -98,35 +94,16 @@ const columns = [
   },
   {
     name: "Votes",
-
-    cell: () => <label className="vote-badge">4,210</label>,
+    selector: (row) => <label className="vote-badge">{row.voteCount}</label>,
   },
 ];
 
-const data = [
-  {
-    id: 1,
-    rank: "#1",
-    sname: "(😀,😀)",
-    name: "CommunityChest",
-    submittedBy: "ChanceTheDev",
-    dateSubmitted: "1 day ago",
-  },
-  {
-    id: 2,
-    rank: "#2",
-    sname: "(❤️,🤖)",
-    name: "DecenDiscord",
-    submittedBy: "MapleLeafMan",
-    dateSubmitted: "1 day ago",
-  },
-];
 const breadcrumbs = [
   { url: "/", text: "Home" },
   { url: "", text: "DAO Race" },
 ];
 
-const Leaderboard = ({}) => {
+const Leaderboard = ({ data }) => {
   return (
     <div className="main">
       <Breadcrumbs list={breadcrumbs} />
