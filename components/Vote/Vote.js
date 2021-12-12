@@ -5,10 +5,7 @@ export default function Vote({ applicationId, voteCount }) {
         {voteCount}
       </div>
       <div className="bg-indigo-500 rounded-r-lg flex content-center p-2">
-        <button
-          className=" hover:bg-gray-900 rounded-lg cursor-pointer"
-          onClick={() => onVote(applicationId)}
-        >
+        <button className=" hover:bg-gray-900 rounded-lg cursor-pointer" onClick={() => onVote(applicationId)}>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="white">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
           </svg>
@@ -20,12 +17,12 @@ export default function Vote({ applicationId, voteCount }) {
 
 export async function onVote(applicationId) {
   const res = await fetch(`/api/vote`, {
-    method: 'POST',
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
       id: applicationId,
     }),
-  })
+  });
 }

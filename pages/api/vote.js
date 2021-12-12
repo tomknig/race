@@ -8,8 +8,6 @@ export default async function vote(req, res) {
     return;
   }
 
-
-
   const session = await getSession({ req });
   if (session) {
     const applicationId = req?.body?.id;

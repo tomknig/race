@@ -130,7 +130,6 @@ export default function Application({ data }) {
   );
 }
 
-
 export async function getServerSideProps(context) {
   const id = context.params.id;
   const fetchedApplications = JSON.parse(JSON.stringify(await getSelectedApplications(id)));
