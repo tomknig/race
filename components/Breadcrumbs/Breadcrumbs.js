@@ -1,14 +1,13 @@
 import { Fragment } from "react";
 
 export default function Breadcrumbs({ list }) {
-  console.log(list);
   return (
     <div className="w-full py-6">
       <ol className="list-reset flex text-grey-dark">
         {list.map((item, i) => (
-          <Fragment key={i}>
+          <Fragment key={`breadcrumb-item-${i}`}>
             <li>
-              <a href="#">{item}</a>
+              {item.url ? <a href={item.url}>{item.text}</a> : <span className="font-semibold">{item.text}</span>}
             </li>
             {i < list.length - 1 && (
               <li>

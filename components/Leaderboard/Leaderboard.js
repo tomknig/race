@@ -5,16 +5,16 @@ import Breadcrumbs from "../Breadcrumbs";
 const ExpandedComponent = ({ data }) => (
   <div className="p-6 top-border row-child">
     <div>
-      <lable className="font-bold">
+      <label className="font-bold">
         <b>Submitted by</b>
-      </lable>{" "}
+      </label>{" "}
       <a className="float-right" href="#">
         Website.com
       </a>
       <p className="pb-4">@{data.submittedBy}</p>
-      <lable className="font-bold">
+      <label className="font-bold">
         <b>Project name</b>
-      </lable>{" "}
+      </label>{" "}
       <a className="float-right" href="#">
         Discord.com/server
       </a>
@@ -23,7 +23,7 @@ const ExpandedComponent = ({ data }) => (
       </p>
     </div>
 
-    <lable className="font-bold">Pitch us your project in a tweet</lable>
+    <label className="font-bold">Pitch us your project in a tweet</label>
     <p>
       Hi, This is {data.sname} calling from XYZ company. Sorry I missed you. I was hoping to speak to you about
       Hyper-Scale. We’ve helped other companies and I think may be able to help you get similar results. You can reach
@@ -99,7 +99,7 @@ const columns = [
   {
     name: "Votes",
 
-    cell: () => <lable className="vote-badge">4,210</lable>,
+    cell: () => <label className="vote-badge">4,210</label>,
   },
 ];
 
@@ -121,7 +121,10 @@ const data = [
     dateSubmitted: "1 day ago",
   },
 ];
-const breadcrumbs = ["Home", "DAO Race"];
+const breadcrumbs = [
+  { url: "/", text: "Home" },
+  { url: "", text: "DAO Race" },
+];
 
 const Leaderboard = ({}) => {
   return (

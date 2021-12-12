@@ -1,5 +1,5 @@
 // components
-import Explanation from "../components/Explanation/Explanation";
+import Explanation from "../components/Explanation";
 import Layout from "../components/Layout";
 //
 export default function Home() {
