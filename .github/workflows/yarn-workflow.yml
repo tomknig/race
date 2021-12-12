@@ -4,15 +4,14 @@ jobs:
   build:
     name: Test
     runs-on: ubuntu-latest
+    env:
+      BUILD_TARGET: ci
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
         run: |
+          cp docker-compose.override.yml.ci docker-compose.override.yml
           docker-compose up -d
           docker container ls
-      - name: List scripts
-        run: docker-compose exec -T web yarn lint:scripts
-      - name: List styles
-        run: docker-compose exec -T web yarn lint:styles
-      - name: List format
-        run: docker-compose exec -T web yarn lint:format
+      - name: Lint
+        run: docker-compose exec -T web yarn lint
