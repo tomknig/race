@@ -1,7 +1,6 @@
 import Breadcrumbs from "../../components/Breadcrumbs";
 import Layout from "../../components/Layout";
 import Vote from "../../components/Vote";
-import Voter from "../../components/Voter";
 import { getSelectedApplications } from "../../actions/applications";
 
 const titles = {
@@ -24,8 +23,6 @@ export default function Application({ data }) {
     { url: "/dao-race", text: "DAO Race" },
     { url: "", text: data.projectName },
   ];
-  // console.log(data)
-  console.log(data);
   return (
     <Layout title={data.projectName}>
       <div className="divide-y divide-gray-300">
@@ -64,7 +61,7 @@ export default function Application({ data }) {
                       />
                     </svg>
                   </div>
-                  <Vote voteCount={data.voteCount} />
+                  <Vote voteCount={data.voteCount} applicationId={data._id} />
                 </div>
               </div>
               <dl>
@@ -112,7 +109,7 @@ export default function Application({ data }) {
             </dd>
           </dl>
           <div className="mb-5 flex flex-row">
-            <Vote voteCount={data.voteCount} />
+            <Vote voteCount={data.voteCount} applicationId={data._id} />
             <div className="text-gray-600 border border-gray-600 bg-gray-200 rounded-lg py-2 px-6 mx-2 font-semibold hover:bg-gray-300 cursor-pointer">
               Flag
             </div>
@@ -135,7 +132,6 @@ export default function Application({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  console.log("GETTING ID", id);
   const fetchedApplications = JSON.parse(JSON.stringify(await getSelectedApplications(id)));
   const data = fetchedApplications[0];
   return {

@@ -10,7 +10,7 @@ export default async function vote(req, res) {
 
   const session = await getSession({ req });
   if (session) {
-    const applicationId = JSON.parse(req?.body)?.id;
+    const applicationId = req?.body?.id;
     const voterEmail = session?.user?.email;
 
     if (!applicationId || !voterEmail) {
