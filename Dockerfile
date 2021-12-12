@@ -5,7 +5,7 @@ WORKDIR /home/app
 COPY --chown=node:node . .
 
 USER node
-ENV MONGO_URL "mongodb://mongo:27017/race"
+ENV MONGODB_URI "mongodb://mongo:27017/race"
 
 RUN yarn install --frozen-lockfile
 RUN yarn build
