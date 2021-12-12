@@ -1,4 +1,5 @@
 import dbConnect from "../../utils/dbConnect";
+import { Types } from "mongoose";
 
 // this function upsert a list of records, used for syncing data
 export async function upsertApplications(records) {
@@ -16,10 +17,10 @@ export async function upsertApplications(records) {
 }
 
 // query all applications
-export async function getApplications(email) {
+export async function getApplications(query, email) {
   await dbConnect();
   const Application = require("../../models/Application");
-  const data = await Application.aggregate([
+  const pipeline = [
     {
       $addFields: {
         // Add the vote count to the application
@@ -30,13 +31,25 @@ export async function getApplications(email) {
       }
     },
 
-    // Don't making emails of voters public
+    // Don't make emails of voters public
     { $unset: "votes" },
 
     // Sort by most votes first
     { $sort: { voteCount: -1 } }
-  ]);
+  ];
+
+  if(query) {
+    pipeline.unshift({ $match: query })
+  }
+
+  const data = await Application.aggregate(pipeline);
+  console.log(data)
   return data;
+}
+
+// query selected applications
+export async function getSelectedApplications(applicationId, email) {
+  return getApplications({ _id: Types.ObjectId(applicationId) }, email);
 }
 
 export async function addVote(applicationId, voterEmail) {
