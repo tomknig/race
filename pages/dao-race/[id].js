@@ -1,5 +1,6 @@
 import ApplicationDetails from "../../components/ApplicationDetails";
 import Layout from "../../components/Layout";
+import { getSelectedApplications } from "../../actions/applications";
 
 export default function Application({ data }) {
   return (
