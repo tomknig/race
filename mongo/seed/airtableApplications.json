@@ -8,11 +8,27 @@
     "projectUrl": "tom.eth",
     "additionalDetails": "not required",
     "referrals": "https://twitter.com/sama",
-    "votes": [ "test1", "test2" ]
+    "votes": ["test 1"]
   },
   {
     "projectName": "SUPER TEST",
     "description": "SUPER TEST",
-    "votes": ["test2"]
+    "votes": ["test 1"]
+  },
+  {
+    "projectName": "Openmusic",
+    "additionalDetails": "1. We are completely bootstrapped.\n2. We have designs and plans for several new features including: mobile and distribution.\n3. The team comprises me and several part-time developers across several time zones.\n4. The beta site (openmusic.io) is not currently accepting new users.\n5. Here is our work in progress for a newly branded landing page: https://circle-halibut-tapr.squarespace.com. To unlock the site, the code is: 1234. \n6. We currently use the Dropbox API for file sharing and sync.\n7. We are collaborating with a major web3 dev shop to potentially integrate music archival storage and NFT minting.\n8. We are incorporated in Ontario, Canada, but will move jurisdiction, as necessary, to support capital formation. \n9. Our preferred organizational structure would be a cooperative or a DAO -- something that supports user ownership and governance.",
+    "description": "A new development environment for music creators that combines workflow, collaboration, and monetization tools in a lightweight, intuitive platform built from web2 and web3 tools.",
+    "ethAddress": "0x12a7D5889FD26EeAB494f0877444D55EBd24840A",
+    "evidenceOfExceptionalAbility": null,
+    "founderBackground": null,
+    "helpfulLink": null,
+    "leaderStatement": "No doubt others could lead, but I have a unique combination of experience and knowledge that spans art, commerce and technology, which would be difficult to replicate. And, there is the determination to see this project through to success.\n\nI have product development experience in audio, video and web2, and business development experience in legal and financial publishing. I am well-versed in finance: I consulted for the United Nations on environmental risk in the capital markets. I have conducted extensive R&D in the music industry.\n\nI write code (just started learning Solidity), and I am the chief designer/architect of Openmusic. This is my full-time gig.",
+    "pitch": null,
+    "projectGoal": "The music industry operates within a legacy system of contracts and payments, predicated on physical distribution and asymmetric bargaining power. For most musicians, the transaction costs are prohibitive.\n\nSuccess, for us, would mean a reinvention of that system: new forms of governance, democratic access to distribution tools, automated IP management -- from inception to licensing, to distribution, payment and settlement -- all with minimal friction and transaction costs for creators and fans.",
+    "projectURL": null,
+    "referrals": "kevalin (KVLN#4394) via a general post on Discord.",
+    "hasUserUpvoted": false,
+    "votes": ["test 1", "test 2"]
   }
 ]
