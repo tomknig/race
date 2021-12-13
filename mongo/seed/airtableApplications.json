@@ -8,12 +8,12 @@
     "projectUrl": "tom.eth",
     "additionalDetails": "not required",
     "referrals": "https://twitter.com/sama",
-    "votes": []
+    "votes": ["test 1"]
   },
   {
     "projectName": "SUPER TEST",
     "description": "SUPER TEST",
-    "votes": []
+    "votes": ["test 1"]
   },
   {
     "projectName": "Openmusic",
@@ -28,8 +28,7 @@
     "projectGoal": "The music industry operates within a legacy system of contracts and payments, predicated on physical distribution and asymmetric bargaining power. For most musicians, the transaction costs are prohibitive.\n\nSuccess, for us, would mean a reinvention of that system: new forms of governance, democratic access to distribution tools, automated IP management -- from inception to licensing, to distribution, payment and settlement -- all with minimal friction and transaction costs for creators and fans.",
     "projectURL": null,
     "referrals": "kevalin (KVLN#4394) via a general post on Discord.",
-    "voteCount": 0,
     "hasUserUpvoted": false,
-    "votes": []
+    "votes": ["test 1", "test 2"]
   }
 ]
