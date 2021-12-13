@@ -1,5 +1,6 @@
 import Vote from "../Vote";
 import Breadcrumbs from "../Breadcrumbs";
+import { useSession } from "next-auth/react";
 
 const titles = {
   name: "Project name",
@@ -16,6 +17,8 @@ const titles = {
 }; // for future translations
 
 const ApplicationDetails = ({ data }) => {
+  const { data: session, status } = useSession();
+
   const breadcrumbs = [
     { url: "/", text: "Home" },
     { url: "/dao-race", text: "DAO Race" },
@@ -71,7 +74,8 @@ const ApplicationDetails = ({ data }) => {
                     />
                   </svg>
                 </div>
-                <Vote voteCount={data.voteCount} applicationId={data._id} />
+                {/* this is just an if statement that checks if a user session exists */}
+                {session && <Vote voteCount={data.voteCount} applicationId={data.applicationId} />}
               </div>
             </div>
             <dl>
@@ -119,7 +123,8 @@ const ApplicationDetails = ({ data }) => {
           </dd>
         </dl>
         <div className="mb-5 flex flex-row">
-          <Vote voteCount={data.voteCount} applicationId={data._id} />
+          {/* this is just an if statement that checks if a user session exists */}
+          {session && <Vote voteCount={data.voteCount} applicationId={data.applicationId} />}
           <div className="flex flex-row items-center text-gray-600 border border-gray-300 bg-gray-100 hover:bg-gray-200 rounded-lg py-2 px-6 mx-2 font-semibold hover:bg-gray-300 cursor-pointer">
             <div>
               <svg
