@@ -25,6 +25,7 @@ export async function getApplications(query, email) {
       $addFields: {
         // Add the vote count to the application
         voteCount: { $size: "$votes" },
+        
         // TODO: that should be in DB
         submittedDate: new Date().toISOString(),
 
@@ -36,19 +37,26 @@ export async function getApplications(query, email) {
     // Don't make emails of voters public
     { $unset: "votes" },
 
-    // Sort by most votes first
-    { $sort: { voteCount: -1 } }
+    {
+      $setWindowFields: {
+        // Sort by most votes first
+         sortBy: { voteCount: -1 },
+
+        // Add rank based off of vote count
+         output: {
+            rank: {
+               $rank: {}
+            }
+         }
+      }
+   }
   ];
 
   if(query) {
     pipeline.unshift({ $match: query })
   }
 
-  const data = await Application.aggregate(pipeline);
-  data.forEach(function(application, index) {
-    application.rank = index + 1;
-  });
-  return data;
+  return Application.aggregate(pipeline);
 }
 
 // query selected applications
