@@ -8,11 +8,11 @@
     "projectUrl": "tom.eth",
     "additionalDetails": "not required",
     "referrals": "https://twitter.com/sama",
-    "votes": []
+    "votes": [ "test1", "test2" ]
   },
   {
     "projectName": "SUPER TEST",
     "description": "SUPER TEST",
-    "votes": []
+    "votes": ["test2"]
   }
 ]

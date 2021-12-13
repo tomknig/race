@@ -43,6 +43,9 @@ export async function getApplications(query, email) {
   }
 
   const data = await Application.aggregate(pipeline);
+  data.forEach(function(application, index) {
+    application.rank = index + 1;
+  });
   return data;
 }
 
