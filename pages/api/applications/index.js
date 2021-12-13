@@ -1,11 +1,8 @@
-import Application from "../../../models/Application";
-import dbConnect from "../../../utils/dbConnect";
+import { getApplications } from "../../../actions/applications";
 
 export default async function handler(req, res) {
-  await dbConnect();
   if (req.method === "GET") {
-    const applications = await Application.find().exec();
-    return res.status(200).send(applications);
+    return res.status(200).send(await getApplications());
   } else {
     res.status(405);
   }
