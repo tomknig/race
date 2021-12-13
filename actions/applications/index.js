@@ -25,6 +25,8 @@ export async function getApplications(query, email) {
       $addFields: {
         // Add the vote count to the application
         voteCount: { $size: "$votes" },
+        // TODO: that should be in DB
+        submittedDate: new Date().toISOString(),
 
         // Indicate if user has alredy voted based on email
         hasUserUpvoted: email ? { $in: [email, "$votes"] } : false
