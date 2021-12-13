@@ -11,20 +11,18 @@ const ExpandedComponent = ({ data }) => (
       <a className="float-right" href="#">
         Website.com
       </a>
-      <p className="pb-4">@{data.submittedBy}</p>
+      <p className="pb-4">@{data.discordId}</p>
       <label className="font-bold">
         <b>Project name</b>
       </label>{" "}
       <a className="float-right" href="#">
         Discord.com/server
       </a>
-      <p className="pb-4">
-        @{data.projectName} {data.sname}
-      </p>
+      <p className="pb-4">@{data.projectName}</p>
     </div>
 
     <label className="font-bold">Pitch us your project in a tweet</label>
-    <p>{data.description}</p>
+    <p>{data.projectTweet}</p>
     <br />
     <Link href={{ pathname: "/dao-race/[id]", query: { id: data._id } }}>View full application</Link>
   </div>
@@ -77,20 +75,16 @@ const columns = [
     selector: (row) => row.rank,
   },
   {
-    name: "Short name",
-    selector: (row) => row.sname,
-  },
-  {
     name: "Name",
     selector: (row) => row.projectName,
   },
   {
     name: "Submitted by",
-    selector: (row) => row.submittedBy,
+    selector: (row) => row.discordId,
   },
   {
     name: "Date submitted",
-    selector: (row) => row.dateSubmitted,
+    selector: (row) => row.submittedAt,
   },
   {
     name: "Votes",

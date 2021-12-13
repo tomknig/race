@@ -48,11 +48,10 @@ const ApplicationSchema = new Schema({
     type: String,
     required: false,
   },
-  upvotes: {
-    type: Number,
+  votes: {
+    type: [String],
     required: true,
-    min: 0,
-    default: 0,
+    default: [],
   },
   submittedAt: {
     type: Date,
