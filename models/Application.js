@@ -6,58 +6,58 @@ const ApplicationSchema = new Schema({
   id: {
     type: Schema.Types.ObjectId,
   },
+  emailAddress: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   projectName: {
     type: String,
     required: true,
     unique: true,
   },
-  description: {
+  projectTweet: {
     type: String,
     required: true,
   },
-  projectGoal: {
+  productPitch: {
     type: String,
-    default: null,
-  },
-  leaderStatement: {
-    type: String,
-    default: null,
-  },
-  projectURL: {
-    type: String,
-    default: null,
+    required: true,
   },
   additionalDetails: {
     type: String,
-    default: null,
+    required: false,
   },
-  referrals: {
+  referral: {
     type: String,
-    defautl: null,
+    required: false,
   },
-  helpfulLink: {
+  helpfulLinks: {
     type: String,
-    default: null,
-  },
-  evidenceOfExceptionalAbility: {
-    type: String,
-    default: null,
+    required: true,
   },
   founderBackground: {
     type: String,
-    default: null,
+    required: true,
   },
-  pitch: {
+  evidenceOfExceptionalAbility: {
     type: String,
-    default: null,
+    required: true,
   },
-  ethAddress: {
+  discordId: {
     type: String,
-    default: null,
+    required: false,
   },
-  votes: {
-    type: [String],
-    default: [],
+  upvotes: {
+    type: Number,
+    required: true,
+    min: 0,
+    default: 0,
+  },
+  submittedAt: {
+    type: Date,
+    required: true,
+    default: Date.now,
   },
 });
 
