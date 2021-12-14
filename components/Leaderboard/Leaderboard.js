@@ -1,6 +1,5 @@
 import Link from "next/link";
 import DataTable from "react-data-table-component";
-import Breadcrumbs from "../Breadcrumbs";
 // A super simple expandable component.{JSON.stringify(data, null, 2)}
 const ExpandedComponent = ({ data }) => (
   <div className="p-6 top-border row-child">
@@ -92,15 +91,9 @@ const columns = [
   },
 ];
 
-const breadcrumbs = [
-  { url: "/", text: "Home" },
-  { url: "", text: "DAO Race" },
-];
-
 const Leaderboard = ({ data }) => {
   return (
     <div className="main">
-      <Breadcrumbs list={breadcrumbs} />
       <div className="leaderboard-list">
         <div className="flex flex-row">
           <div className="basis-3/4">
