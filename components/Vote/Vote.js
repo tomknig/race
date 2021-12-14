@@ -13,7 +13,7 @@ export default function Vote({ applicationId, initialCount }) {
         id: applicationId,
       }),
     });
-    setVoteCount(voteCount + 1);
+    setVoteCount(initialCount + 1);
   }
 
   return (
