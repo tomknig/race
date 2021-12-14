@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function Vote({ applicationId, initialCount }) {
-  const [voteCount, setVoteCount] = useState(init);
+  const [voteCount, setVoteCount] = useState(initialCount);
 
   async function onVote(applicationId) {
     const res = await fetch(`/api/vote`, {
