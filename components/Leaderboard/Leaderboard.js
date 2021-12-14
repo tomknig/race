@@ -125,7 +125,7 @@ function Countdown({ until }) {
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
   return (
-    <div className="flex-1 flex flex-row">
+    <div className="flex-1 flex flex-row space-x-2">
       <CountdownElem value={days} label={days === 1 ? "Day" : "Days"} />
       <CountdownElem value={hours} label={hours === 1 ? "Hour" : "Hours"} />
       <CountdownElem value={minutes} label={minutes === 1 ? "Minute" : "Minutes"} />
