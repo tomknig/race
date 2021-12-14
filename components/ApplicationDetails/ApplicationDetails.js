@@ -52,7 +52,7 @@ const ApplicationDetails = ({ data }) => {
             <div className="flex flex-row content-center mb-5">
               <div className="flex-1">
                 <dt className="font-semibold">{titles.submittedBy}</dt>
-                <dd>{data.submittedBy}</dd>
+                <dd>{data.discordId}</dd>
               </div>
               <div className="flex flex-row h-[fit-content]">
                 <div
@@ -80,33 +80,29 @@ const ApplicationDetails = ({ data }) => {
             </div>
             <dl>
               <dt className="font-semibold">{titles.name}</dt>
-              <dd className="mb-5">
-                {data.projectName} ({data.shortName})
-              </dd>
+              <dd className="mb-5">{data.projectName}</dd>
               <dt className="font-semibold">{titles.pitch}</dt>
-              <dd className="mb-5">{data.pitch || "N.A"}</dd>
+              <dd className="mb-5">{data.projectTweet || "N.A"}</dd>
             </dl>
           </div>
         </div>
         <dl>
-          <dt className="font-semibold">{titles.fullDesc}</dt>
-          <dd className="mb-5">{data.fullDesc || "N.A"}</dd>
           <dt className="font-semibold">{titles.background}</dt>
-          <dd className="mb-5">{data.background || "N.A"}</dd>
+          <dd className="mb-5">{data.founderBackground || "N.A"}</dd>
           <dt className="font-semibold">{titles.evidence}</dt>
-          <dd className="mb-5">{data.evidence || "N.A"}</dd>
+          <dd className="mb-5">{data.evidenceOfExceptionalAbility || "N.A"}</dd>
           <dt className="font-semibold">{titles.misc}</dt>
-          <dd className="mb-5">{data.misc || "N.A"}</dd>
+          <dd className="mb-5">{data.additionalDetails || "N.A"}</dd>
           <dt className="font-semibold mb-3">{titles.links}</dt>
           <dd className="mb-5">
             <ul className="link-list list-disc pl-5">
-              {/* {data.links.map((link, i) => (
+              {data.helpfulLinks.split(",").map((link, i) => (
                 <li key={`link-${i}`}>
-                  <a href={link.url} target="_blank" rel="noreferrer">
-                    {link.text}
+                  <a href={link} target="_blank" rel="noreferrer">
+                    {link}
                   </a>
                 </li>
-              ))} */}
+              ))}
             </ul>
           </dd>
           <dt className="font-semibold mb-3">{titles.uploads}</dt>
