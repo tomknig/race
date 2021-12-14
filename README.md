@@ -29,7 +29,7 @@ race_direct_mongo_seed_1   docker-entrypoint.sh /mong ...   Exit 0
 web                        docker-entrypoint.sh sh -c ...   Up             0.0.0.0:3000->3000/tcp,:::3000->3000/tcp
 ```
 
-You might need to wait a minut while `web` installs its dependencies.
+You might need to wait a minute while `web` installs its dependencies.
 
 Access `web` logs with `docker-compose logs web`.
 
