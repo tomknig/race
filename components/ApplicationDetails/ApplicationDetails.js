@@ -52,7 +52,7 @@ const ApplicationDetails = ({ data }) => {
             <div className="flex flex-row content-center mb-5">
               <div className="flex-1">
                 <dt className="font-semibold">{titles.submittedBy}</dt>
-                <dd>{data.submittedBy}</dd>
+                <dd>{data.discordId}</dd>
               </div>
               <div className="flex flex-row h-[fit-content]">
                 <div
@@ -82,7 +82,7 @@ const ApplicationDetails = ({ data }) => {
               <dt className="font-semibold">{titles.name}</dt>
               <dd className="mb-5">{data.projectName}</dd>
               <dt className="font-semibold">{titles.pitch}</dt>
-              <dd className="mb-5">{data.pitch || "N.A"}</dd>
+              <dd className="mb-5">{data.projectTweet || "N.A"}</dd>
             </dl>
           </div>
         </div>
@@ -100,10 +100,10 @@ const ApplicationDetails = ({ data }) => {
           <dt className="font-semibold mb-3">{titles.helpfulLink}</dt>
           <dd className="mb-5">
             <ul className="link-list list-disc pl-5">
-              {/* {data.helpfulLink.map((link, i) => (
+              {/* {data.helpfulLinks.split(",").map((link, i) => (
                 <li key={`link-${i}`}>
-                  <a href={link.url} target="_blank" rel="noreferrer">
-                    {link.text}
+                  <a href={link} target="_blank" rel="noreferrer">
+                    {link}
                   </a>
                 </li>
               ))} */}
