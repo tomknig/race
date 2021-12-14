@@ -1,10 +1,10 @@
 import { useState } from "react";
 export default function Vote({ applicationId, initialCount }) {
   const [voteCount, setVoteCount] = useState(initialCount);
-  const [isUservoted,setUservoted]=useState(false)
+  const [isUservoted, setUservoted] = useState(false);
 
   async function onVote(applicationId) {
-    if(!isUservoted){
+    if (!isUservoted) {
       const res = await fetch(`/api/vote`, {
         method: "POST",
         headers: {
@@ -15,7 +15,7 @@ export default function Vote({ applicationId, initialCount }) {
         }),
       });
       setVoteCount(initialCount + 1);
-      setUservoted(true)
+      setUservoted(true);
     }
   }
   return (
