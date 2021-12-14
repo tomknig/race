@@ -98,7 +98,7 @@ export default function Home({ projects }) {
                 </div>
               </div>
               <div className="flex justify-center">
-                <Button color="primary" onClick={() => alert("apply!")}>
+                <Button color="primary" el="a" href="https://airtable.com/shrLFCXD7BQXUg97K">
                   Apply
                 </Button>
               </div>
