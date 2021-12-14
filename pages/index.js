@@ -7,6 +7,9 @@ import { getApplications } from "../actions/applications";
 import Button from "../components/atoms/Button";
 import { useRouter } from "next/router";
 
+// components
+import Footer from "../components/Footer";
+
 export default function Home({ projects }) {
   const router = useRouter();
 
@@ -103,6 +106,7 @@ export default function Home({ projects }) {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
