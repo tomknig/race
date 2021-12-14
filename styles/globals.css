@@ -62,6 +62,7 @@ h6 {
 
 .dtable [data-tag="allowRowEvents"] {
   overflow: inherit !important;
+  width: 100%;
 }
 
 .dtable .vote-badge {
