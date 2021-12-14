@@ -12,6 +12,7 @@ First, clone the repo into a new folder (if you haven't yet):
 git clone https://github.com/hyper-scale/race.git .
 ```
 
+### For backend
 Next start dev enviroment:
 
 ```sh
@@ -25,6 +26,30 @@ docker-compose up -d mongo
 ```
 
 MongoDB is pre-populated with test data.
+
+### For frontend
+First install deps:
+```
+npm i
+```
+or
+```
+yarn
+```
+
+Next seed the db:
+```
+docker-compose up mongo_seed
+```
+
+Next run dev mode:
+```
+npm run dev
+```
+or
+```
+yarn dev
+```
 
 You can now open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
