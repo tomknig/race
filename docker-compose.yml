@@ -28,7 +28,7 @@ services:
       mongo:
         condition: service_healthy
     env_file:
-      - .env.docker
+      - .env.docker.example
 
   mongo_seed:
     image: mongo
