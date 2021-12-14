@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useState, useMemo } from "react";
 import DataTable from "react-data-table-component";
-import Breadcrumbs from "../Breadcrumbs";
 // A super simple expandable component.{JSON.stringify(data, null, 2)}
 const ExpandedComponent = ({ data }) => (
   <div className="p-6 top-border row-child">
@@ -169,7 +168,6 @@ function DaoRaceCountdown() {
 const Leaderboard = ({ data }) => {
   return (
     <div className="main">
-      <Breadcrumbs list={breadcrumbs} />
       <div className="leaderboard-list">
         <div className="flex flex-row">
           <div className="flex basis-1/2 flex-col space-y-2">
