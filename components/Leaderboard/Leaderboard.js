@@ -110,18 +110,20 @@ const columns = [
     ),
   },
   {
-    name: "Name",
-    selector: (row) => row.projectName,
+      name: "Name",
+      selector: (row) => row.projectName ?? placeholderDiv,
   },
-  {
-    name: "Submitted by",
-    selector: (row) => row.discordId,
-  },
-  // {
-  //   name: "Date submitted",
-  //   selector: (row) => row.submittedAt,
-  // },
+    {
+        name: "Submitted by",
+        selector: (row) => row.discordId ?? placeholderDiv,
+    },
+    // {
+    //   name: "Date submitted",
+    //   selector: (row) => row.submittedAt,
+    // },
 ];
+
+const placeholderDiv = <div className="h-3 w-3/5 bg-gradient-to-r from-gray-100 to-white animate-pulse"></div>
 
 const Leaderboard = ({ data, numRows }) => {
   let rows = JSON.parse(JSON.stringify(data));
