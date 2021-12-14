@@ -101,7 +101,7 @@ const columns = [
   },
 ];
 
-const Leaderboard = ({ data, numRows, showPagination }) => {
+const Leaderboard = ({ data, numRows }) => {
   let rows = JSON.parse(JSON.stringify(data));
   if (numRows) {
     rows = rows.slice(0, numRows);
