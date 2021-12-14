@@ -22,12 +22,14 @@ if (!cache) {
  *
  * @returns Established connection
  *
+ * @param withCache - Whether or not to use a cached connection
+ *
  * ## Examples
  *
  * await dbConnect();
  *
  */
-async function dbConnect() {
+async function dbConnect(withCache = false) {
   if (cache.connection) {
     return cache.connection;
   }
