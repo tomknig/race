@@ -32,7 +32,7 @@ function Countdown({ until }) {
       <CountdownElem value={minutes} label={minutes === 1 ? "Minute" : "Minutes"} />
       <CountdownElem value={seconds} label={seconds === 1 ? "Second" : "Seconds"} />
     </div>
-  )
+  );
 }
 
 function getNextDate(epoch, intervalDays, currentDate) {
@@ -62,7 +62,6 @@ function DaoRaceCountdown() {
     }, 1000);
     return () => clearInterval(interval);
   }, [epoch, intervalDays, nextRaceAt]);
-
 
   return <Countdown until={nextRaceAt} />;
 }

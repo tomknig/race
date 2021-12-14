@@ -94,7 +94,6 @@ const columns = [
   },
 ];
 
-
 const Leaderboard = ({ data }) => {
   return (
     <div className="main">
