@@ -41,7 +41,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="flex justify-center grow basis-full md:basis-1 mt-4 md:mt-0">
-          <Image src={Hyperscale} className="md:abso" width="95" alt=""></Image>
+          <Image src={Hyperscale} width="95" alt=""></Image>
         </div>
         <div className="grow basis-0 md:basis-1" />
       </div>
