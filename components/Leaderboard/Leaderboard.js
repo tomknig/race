@@ -95,18 +95,6 @@ const columns = [
     selector: (row) => row.rank,
   },
   {
-    name: "Name",
-    selector: (row) => row.projectName,
-  },
-  {
-    name: "Submitted by",
-    selector: (row) => row.discordId,
-  },
-  {
-    name: "Date submitted",
-    selector: (row) => row.submittedAt,
-  },
-  {
     name: "Votes",
     selector: (row) => (
       <label
@@ -121,6 +109,18 @@ const columns = [
       </label>
     ),
   },
+  {
+    name: "Name",
+    selector: (row) => row.projectName,
+  },
+  {
+    name: "Submitted by",
+    selector: (row) => row.discordId,
+  },
+  // {
+  //   name: "Date submitted",
+  //   selector: (row) => row.submittedAt,
+  // },
 ];
 
 const Leaderboard = ({ data, numRows }) => {
