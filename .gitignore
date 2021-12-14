@@ -8,10 +8,6 @@
 # mongodb
 data/
 
-# lockfiles
-package-lock.json
-yarn.lock
-
 # testing
 /coverage
 
