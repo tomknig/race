@@ -13,7 +13,7 @@ if (!mongodbURI) {
  */
 let cache = global.mongoose;
 
-if (!cached) {
+if (!cache) {
   cache = global.mongoose = { connection: null, promise: null };
 }
 
