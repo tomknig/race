@@ -119,7 +119,6 @@ const Leaderboard = ({ data }) => {
             data={data}
             expandableRows
             expandableRowsComponent={ExpandedComponent}
-            pagination
           />
         </div>
       </div>
