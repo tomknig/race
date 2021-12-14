@@ -75,7 +75,7 @@ const ApplicationDetails = ({ data }) => {
                   </svg>
                 </div>
                 {/* this is just an if statement that checks if a user session exists */}
-                {session && <Vote voteCount={data.voteCount} applicationId={data._id} />}
+                {session && <Vote initialCount={data.voteCount} applicationId={data._id} />}
               </div>
             </div>
             <dl>
