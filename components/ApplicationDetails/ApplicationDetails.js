@@ -7,10 +7,10 @@ const titles = {
   submittedBy: "Submitted by",
   pitch: '"Pitch us your project in a tweet"',
   description: "Full pitch",
-  background: "Background of each founder",
-  evidence: "Evidence of exceptional ability for each founder",
-  misc: "Is there anything else we should know about?",
-  links: "Links",
+  founderBackground: "Background of each founder",
+  evidenceOfExceptionalAbility: "Evidence of exceptional ability for each founder",
+  additionalDetails: "Is there anything else we should know about?",
+  helpfulLink: "Links",
   uploads: "Uploads",
   voteFor: "Votes for",
   flag: "Flag",
@@ -87,22 +87,26 @@ const ApplicationDetails = ({ data }) => {
           </div>
         </div>
         <dl>
-          <dt className="font-semibold">{titles.background}</dt>
+          <dt className="font-semibold">{titles.description}</dt>
+          <dd className="mb-5">
+            {titles.description} {data.description}
+          </dd>
+          <dt className="font-semibold">{titles.founderBackground}</dt>
           <dd className="mb-5">{data.founderBackground || "N.A"}</dd>
-          <dt className="font-semibold">{titles.evidence}</dt>
+          <dt className="font-semibold">{titles.evidenceOfExceptionalAbility}</dt>
           <dd className="mb-5">{data.evidenceOfExceptionalAbility || "N.A"}</dd>
-          <dt className="font-semibold">{titles.misc}</dt>
+          <dt className="font-semibold">{titles.additionalDetails}</dt>
           <dd className="mb-5">{data.additionalDetails || "N.A"}</dd>
-          <dt className="font-semibold mb-3">{titles.links}</dt>
+          <dt className="font-semibold mb-3">{titles.helpfulLink}</dt>
           <dd className="mb-5">
             <ul className="link-list list-disc pl-5">
-              {data.helpfulLinks.split(",").map((link, i) => (
+              {/* {data.helpfulLinks.split(",").map((link, i) => (
                 <li key={`link-${i}`}>
                   <a href={link} target="_blank" rel="noreferrer">
                     {link}
                   </a>
                 </li>
-              ))}
+              ))} */}
             </ul>
           </dd>
           <dt className="font-semibold mb-3">{titles.uploads}</dt>
