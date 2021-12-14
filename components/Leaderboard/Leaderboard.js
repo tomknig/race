@@ -102,10 +102,10 @@ const columns = [
     name: "Submitted by",
     selector: (row) => row.discordId,
   },
-  {
-    name: "Date submitted",
-    selector: (row) => row.submittedAt,
-  },
+  // {
+  //   name: "Date submitted",
+  //   selector: (row) => row.submittedAt,
+  // },
   {
     name: "Votes",
     selector: (row) => (
