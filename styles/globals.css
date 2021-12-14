@@ -52,19 +52,20 @@ h6 {
   color: #6366f1;
 }
 
-.tab-filter div {
-  border-bottom: 1px solid;
-  padding-bottom: 1.5rem;
-}
+ .tab-filter button {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+ }
 
 .tab-filter .active {
-  border-bottom: 3px solid;
+  border: none;
+} 
+.dtable [data-tag="allowRowEvents"]{
+  overflow: inherit !important;
 }
-
 .vote-badge {
-  background-color: black;
-  color: white;
-  border-radius: 0.25rem;
+  background: rgb(228,241,252);
+  background: linear-gradient(90deg, rgba(228,241,252,1) 0%, rgba(218,223,252,1) 35%, rgba(236,229,249,1) 100%);
+   border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
 }
 

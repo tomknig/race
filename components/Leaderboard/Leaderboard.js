@@ -23,7 +23,7 @@ const ExpandedComponent = ({ data }) => {
         </div>
       </div>
       <div className="flex gap-x-12 mb-2">
-        <div className="basis-1/3">{/* TODO: links go here */}</div>
+        <div className="basis-1/3">{/*  links go here */}</div>
         <div className="basis-2/3">
           <Button
             color="primary-outline"
@@ -44,9 +44,29 @@ const customStyles = {
       color: "white",
       marginTop: "3.5rem",
       marginBottom: "0.95rem",
+      
     },
   },
-
+  headRow: {
+    style: {
+      minHeight: "72px",
+     background:"#00000005",
+     border: "0 !important",
+     borderRadius: "0.5rem",
+     width: "calc(100% - 25px)",
+     margin: "0.45rem 0.75rem",
+    },
+  },
+  headCells: {
+    style: {
+      paddingLeft: "8px",
+      paddingRight: "8px",
+      color: "#6b7280",
+      marginBottom: "0.5rem",
+      fontWeight: "bold",
+      fontSize: "1rem",
+    },
+  },
   rows: {
     style: {
       minHeight: "72px",
@@ -57,17 +77,11 @@ const customStyles = {
       width: "calc(100% - 25px)",
       margin: "0.45rem 0.75rem",
       borderRadius: "0.5rem",
+      fontWeight: "bold"
     },
   },
-  headCells: {
-    style: {
-      paddingLeft: "8px",
-      paddingRight: "8px",
-      fontSize: "0.8rem",
-      color: "#000000",
-      marginBottom: "0.5rem",
-    },
-  },
+ 
+ 
   cells: {
     style: {
       paddingLeft: "8px",
