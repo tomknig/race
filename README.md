@@ -16,7 +16,7 @@ git clone https://github.com/hyper-scale/race.git .
 Next start dev enviroment:
 
 ```sh
-$ docker-compose up -d
+$ docker-compose up -d --build
 ```
 
 Verify that mongo and web services are running:
@@ -28,6 +28,10 @@ mongo                      docker-entrypoint.sh mongod      Up (healthy)   0.0.0
 race_direct_mongo_seed_1   docker-entrypoint.sh /mong ...   Exit 0
 web                        docker-entrypoint.sh sh -c ...   Up             0.0.0.0:3000->3000/tcp,:::3000->3000/tcp
 ```
+
+You might need to wait a minut while `web` installs its dependencies.
+
+Access `web` logs with `docker-compose logs web`.
 
 `mongo_seed` should be in `Exit 0` as it is used for populating mongodb. More in `Test data` section below.
 MongoDB is already pre-populated with test data.
