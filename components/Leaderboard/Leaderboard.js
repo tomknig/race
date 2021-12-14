@@ -123,7 +123,14 @@ const columns = [
   // },
 ];
 
-const placeholderDiv = <div className="h-3 w-3/5 bg-gradient-to-r from-gray-100 to-white animate-pulse"></div>
+const placeholderDiv = (
+  <div
+    className="h-3 w-3/5 animate-pulse"
+    style={{
+      background: "linear-gradient(90deg, #E5E5E5 0%, rgba(255,255,255,1) 100%)",
+    }}
+  ></div>
+);
 
 const Leaderboard = ({ data, numRows }) => {
   let rows = JSON.parse(JSON.stringify(data));
