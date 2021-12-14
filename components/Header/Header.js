@@ -6,14 +6,12 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Button from "../atoms/Button";
 
-const connectWallet = () => alert(`Coming soon!`);
-
 export default function Header() {
   const { data: _, status } = useSession();
 
   const discordBtnProps = {
     text: status === "authenticated" ? "Sign Out" : "Connect Discord",
-    onClick: status === "authenticated" ? () => signIn("discord") : () => signOut("discord"),
+    onClick: status === "authenticated" ? () => signOut("discord") : () => signIn("discord"),
   };
 
   return (

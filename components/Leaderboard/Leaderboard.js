@@ -1,31 +1,41 @@
 import Link from "next/link";
 import DataTable from "react-data-table-component";
-// A super simple expandable component.{JSON.stringify(data, null, 2)}
-const ExpandedComponent = ({ data }) => (
-  <div className="p-6 top-border row-child">
-    <div>
-      <label className="font-bold">
-        <b>Submitted by</b>
-      </label>{" "}
-      <a className="float-right" href="#">
-        Website.com
-      </a>
-      <p className="pb-4">@{data.discordId}</p>
-      <label className="font-bold">
-        <b>Project name</b>
-      </label>{" "}
-      <a className="float-right" href="#">
-        Discord.com/server
-      </a>
-      <p className="pb-4">@{data.projectName}</p>
-    </div>
+import Button from "../atoms/Button";
+import { useRouter } from "next/router";
 
-    <label className="font-bold">Pitch us your project in a tweet</label>
-    <p>{data.projectTweet}</p>
-    <br />
-    <Link href={{ pathname: "/dao-race/[id]", query: { id: data._id } }}>View full application</Link>
-  </div>
-);
+// A super simple expandable component.{JSON.stringify(data, null, 2)}
+const ExpandedComponent = ({ data }) => {
+  const router = useRouter();
+  return (
+    <div className="p-6 top-border row-child">
+      <div className="flex gap-x-12 mb-2">
+        <div className="basis-1/3">
+          <dl>
+            <dt className="font-semibold">Pitch us your project in a tweet</dt>
+            <dd className="mb-5">{data.productPitch || "N.A."}</dd>
+          </dl>
+        </div>
+        <div className="basis-2/3">
+          <dl>
+            <dt className="font-semibold">Background of each founder</dt>
+            <dd className="mb-5">{data.evidenceOfExceptionalAbility || "N.A"}</dd>
+          </dl>
+        </div>
+      </div>
+      <div className="flex gap-x-12 mb-2">
+        <div className="basis-1/3">{/* TODO: links go here */}</div>
+        <div className="basis-2/3">
+          <Button
+            color="primary-outline"
+            onClick={() => router.push({ pathname: "/dao-race/[id]", query: { id: data._id } })}
+          >
+            View Full Application
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 //  Internally, customStyles will deep merges your customStyles with the default styling.
 const customStyles = {
