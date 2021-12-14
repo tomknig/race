@@ -43,15 +43,17 @@ export async function getApplications(query, email) {
   }
 
   const aggregate = await Application.aggregate(pipeline);
-  var lastVoteCount = 0;
-  var lastRank = 0;
-  aggregate.forEach(function(application, index) {
-    if (application.voteCount != lastVoteCount) {
-      lastVoteCount = application.voteCount;
-      lastRank = lastRank + 1
-    }
-    application.rank = lastRank;
-  });
+  if (aggregate.length > 0) {
+    var lastVoteCount = aggregate[0].voteCount;
+    var lastRank = 1;
+    aggregate.forEach(function(application, index) {
+      if (application.voteCount != lastVoteCount) {
+        lastVoteCount = application.voteCount;
+        lastRank = lastRank + 1
+      }
+      application.rank = lastRank;
+    });
+  }
   return aggregate;
 }
 
