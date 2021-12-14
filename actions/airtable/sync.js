@@ -33,33 +33,27 @@ export function formatAirtableRecords(records) {
   return records.map((record) => {
     // map fields from airtable to mongoDB
     const {
-      "Ethereum Address": ethAddress,
+      "Email": emailAddress,
       "Project Name": projectName,
-      Attachments: description,
-      "Project Goals": projectGoal,
-      "Leader Statement": leaderStatement,
-      "Project URL": projectUrl,
-      "Additional Details": additionalDetails,
-      Referral: referrals,
-      "Helpful links": helpfulLink,
+      "Pitch us your project in a tweet": projectTweet,
+      "Pitch us your product": productPitch,
+      "Provide some background on each founder": founderBackground,
       "Please state evidence of exceptional ability for each founder":
         evidenceOfExceptionalAbility,
-      "Provide some background on each founder": founderBackground,
-      "Pitch us your product": pitch,
+      "Is there anything else we should know about?": additionalDetails,
+      "Helpful links": helpfulLinks,
+      Referral: referral,
     } = record;
     return {
-      ethAddress,
+      emailAddress,
       projectName,
-      description,
-      projectGoal,
-      leaderStatement,
-      projectUrl,
-      additionalDetails,
-      referrals,
-      helpfulLink,
-      evidenceOfExceptionalAbility,
+      projectTweet,
+      productPitch,
       founderBackground,
-      pitch,
+      evidenceOfExceptionalAbility,
+      additionalDetails,
+      helpfulLinks,
+      referral,
     };
   });
 }
