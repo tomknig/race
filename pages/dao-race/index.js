@@ -24,9 +24,13 @@ export default function DaoRace({ projects }) {
         </div>
       </div>
       <div className="basis-1/4 flex  tab-filter">
-        <button className="active py-3 px-12 bg-indigo-500 items-center shadow-md rounded-l-lg hover:text-white-500 hover:bg-indigo-600 focus:outline-none text-white focus:ring-indigo-500">Most voted</button>
-        <button className="py-3 px-12 border-gray bg-white items-center shadow-md rounded-r-lg  hover:text-gray-500 hover:bg-gray-100 focus:outline-none  ">Most recent</button>
-        </div>
+        <button className="active py-3 px-12 bg-indigo-500 items-center shadow-md rounded-l-lg hover:text-white-500 hover:bg-indigo-600 focus:outline-none text-white focus:ring-indigo-500">
+          Most voted
+        </button>
+        <button className="py-3 px-12 border-gray bg-white items-center shadow-md rounded-r-lg  hover:text-gray-500 hover:bg-gray-100 focus:outline-none  ">
+          Most recent
+        </button>
+      </div>
       <Leaderboard data={projects} />
     </Layout>
   );

@@ -42,6 +42,14 @@ h6 {
   background-color: rgba(255 255 255 / var(--tw-bg-opacity));
 }
 
+.tab-filter button {
+  border: 1px solid #0000001f;
+}
+
+.tab-filter .active {
+  border: none;
+}
+
 .dtable button:active,
 .dtable button:focus,
 .dtable button:hover {
@@ -52,25 +60,17 @@ h6 {
   color: #6366f1;
 }
 
- .tab-filter button {
-  border: 1px solid rgba(0, 0, 0, 0.12);
- }
-
-.tab-filter .active {
-  border: none;
-} 
-.dtable [data-tag="allowRowEvents"]{
+.dtable [data-tag="allowRowEvents"] {
   overflow: inherit !important;
 }
-.vote-badge {
-  background: rgb(228,241,252);
-  background: linear-gradient(90deg, rgba(228,241,252,1) 0%, rgba(218,223,252,1) 35%, rgba(236,229,249,1) 100%);
-   border-radius: 0.25rem;
+
+.dtable .vote-badge {
+  border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
 }
 
 .top-border {
-  border-top: 1px rgb(0 0 0 / 5%) solid;
+  border-top: 1px #0000001f solid;
 }
 
 .rdt_Pagination {

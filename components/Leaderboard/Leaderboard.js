@@ -44,17 +44,16 @@ const customStyles = {
       color: "white",
       marginTop: "3.5rem",
       marginBottom: "0.95rem",
-      
     },
   },
   headRow: {
     style: {
       minHeight: "72px",
-     background:"#00000005",
-     border: "0 !important",
-     borderRadius: "0.5rem",
-     width: "calc(100% - 25px)",
-     margin: "0.45rem 0.75rem",
+      background: "#00000005",
+      border: "0 !important",
+      borderRadius: "0.5rem",
+      width: "calc(100% - 25px)",
+      margin: "0.45rem 0.75rem",
     },
   },
   headCells: {
@@ -62,7 +61,6 @@ const customStyles = {
       paddingLeft: "8px",
       paddingRight: "8px",
       color: "#6b7280",
-      marginBottom: "0.5rem",
       fontWeight: "bold",
       fontSize: "1rem",
     },
@@ -77,11 +75,10 @@ const customStyles = {
       width: "calc(100% - 25px)",
       margin: "0.45rem 0.75rem",
       borderRadius: "0.5rem",
-      fontWeight: "bold"
+      fontWeight: "bold",
     },
   },
- 
- 
+
   cells: {
     style: {
       paddingLeft: "8px",
@@ -111,7 +108,7 @@ const columns = [
   },
   {
     name: "Votes",
-    selector: (row) => <label className="vote-badge">{row.voteCount}</label>,
+    selector: (row) => <label className="vote-badge" style={{ background: "rgb(228, 241, 252)", background: "linear-gradient(90deg,rgba(228, 241, 252, 100%) 0%,rgba(218, 223, 252, 100%) 35%,rgba(236, 229, 249, 100%) 100%)"}}>{row.voteCount}</label>,
   },
 ];
 
