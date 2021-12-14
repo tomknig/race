@@ -144,7 +144,6 @@ const Leaderboard = ({ data, numRows }) => {
   if (numRows) {
     rows = rows.slice(0, numRows);
   }
-  console.log(rows);
   return (
     <div className="leaderboard-list">
       <div className="dtable">
