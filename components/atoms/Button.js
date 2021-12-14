@@ -11,6 +11,17 @@ export default function Button({ size, color, onClick, children }) {
   if (color === "primary") {
     classes.push("text-white", "bg-indigo-500", "hover:bg-indigo-600", "focus:ring-indigo-500");
   }
+  if (color === "primary-outline") {
+    classes.push(
+      "text-indigo-500",
+      "bg-white",
+      "border",
+      "border solid",
+      "border-indigo-500",
+      "focus:border-indigo-600",
+      "focus:text-indigo-600"
+    );
+  }
   return (
     <button className={classes.join(" ")} onClick={onClick}>
       {children}

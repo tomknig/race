@@ -88,9 +88,7 @@ const ApplicationDetails = ({ data }) => {
         </div>
         <dl>
           <dt className="font-semibold">{titles.description}</dt>
-          <dd className="mb-5">
-            {titles.description} {data.description}
-          </dd>
+          <dd className="mb-5">{data.description || "N.A."}</dd>
           <dt className="font-semibold">{titles.founderBackground}</dt>
           <dd className="mb-5">{data.founderBackground || "N.A"}</dd>
           <dt className="font-semibold">{titles.evidenceOfExceptionalAbility}</dt>
