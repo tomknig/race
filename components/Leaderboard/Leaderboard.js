@@ -94,13 +94,6 @@ const columns = [
   },
 ];
 
-const breadcrumbs = [
-  { url: "/", text: "Home" },
-  { url: "", text: "DAO Race" },
-];
-
-
-
 
 const Leaderboard = ({ data }) => {
   return (
