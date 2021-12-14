@@ -33,6 +33,9 @@ export async function getApplications(query, email) {
 
     // Don't make emails of voters public
     { $unset: "votes" },
+
+    // Sort by most votes first
+    { $sort: { voteCount: -1 } }
   ];
 
   if (query) {
@@ -40,12 +43,16 @@ export async function getApplications(query, email) {
   }
 
   const aggregate = await Application.aggregate(pipeline);
-  const sortedAggregate = aggregate.sort((a, b) => b.voteCount - a.voteCount);
-  const sortedAggregateWithRank = sortedAggregate.map((application) => ({
-    ...application,
-    rank: sortedAggregate.filter((app) => application.voteCount > app.voteCount).length,
-  }));
-  return sortedAggregateWithRank;
+  var lastVoteCount = 0;
+  var lastRank = 0;
+  aggregate.forEach(function(application, index) {
+    if (application.voteCount != lastVoteCount) {
+      lastVoteCount = application.voteCount;
+      lastRank = lastRank + 1
+    }
+    application.rank = lastRank;
+  });
+  return aggregate;
 }
 
 // query selected applications
