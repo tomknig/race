@@ -1,4 +1,4 @@
-export default function Button({ size, color, onClick, children }) {
+export default function Button({ el, size, color, onClick, href, target, children }) {
   let classes = ["text-redrose", "font-bold", "focus:outline-none", "focus:ring-2", "focus:ring-offset-2"];
   if (size === "large") {
     classes.push("py-3", "px-12", "rounded-xl", "text-lg");
@@ -22,9 +22,17 @@ export default function Button({ size, color, onClick, children }) {
       "focus:text-indigo-600"
     );
   }
-  return (
+  let element = (
     <button className={classes.join(" ")} onClick={onClick}>
       {children}
     </button>
   );
+  if (el === "a") {
+    element = (
+      <a className={classes.join(" ")} href={href} target={target}>
+        {children}
+      </a>
+    );
+  }
+  return element;
 }
