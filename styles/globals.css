@@ -61,7 +61,9 @@ h6 {
 }
 
 .dtable [data-tag="allowRowEvents"] {
-  overflow: inherit !important;
+  text-overflow: ellipsis;
+  white-space: nowrap !important;
+  overflow: hidden !important;
   width: 100%;
 }
 
@@ -88,13 +90,6 @@ h6 {
 
 .link-list a {
   color: #5f75ee;
-}
-
-/* Custom text ellipsis for leaderboard data table */
-.dtable [data-tag="allowRowEvents"] {
-  text-overflow: ellipsis;
-  white-space: nowrap !important;
-  overflow: hidden !important;
 }
 
 @tailwind base;
