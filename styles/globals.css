@@ -62,6 +62,7 @@ h6 {
 
 .dtable [data-tag="allowRowEvents"] {
   @apply !truncate;
+
   width: 100%;
 }
 
