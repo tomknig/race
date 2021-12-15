@@ -61,9 +61,7 @@ h6 {
 }
 
 .dtable [data-tag="allowRowEvents"] {
-  text-overflow: ellipsis;
-  white-space: nowrap !important;
-  overflow: hidden !important;
+  @apply !truncate;
   width: 100%;
 }
 
